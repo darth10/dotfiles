@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /home/darth10/bin/tpfc/
+./tpfc_start.sh &
