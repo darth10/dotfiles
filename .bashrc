@@ -102,7 +102,15 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PS1="\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\][ \w ]\[\e[m\] \[\e[m\]> "
+# commands for git branch/status
+function parse_git_dirty {
+  [[ $(git diff 2> /dev/null) != "" ]] && echo "*"
+}
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ \1$(parse_git_dirty)/"
+}
+
+export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\][ \w ]\[\e[0;36m\]$(parse_git_branch)\[\e[m\] \[\e[m\]> '
 export GEM_HOME=/var/lib/gems/1.8/bin/
 export ANDROID_HOME=/home/darth10/pymatter/android-sdk-linux/
 export PATH=$PATH:/var/lib/gems/1.8/bin/bin/:/pi/pymatter/play/:/home/darth10/pymatter/android-sdk-linux/tools:/home/darth10/pymatter/android-sdk-linux/platform-tools:/home/darth10/pymatter/gitstick
