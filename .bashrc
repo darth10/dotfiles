@@ -102,7 +102,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# commands for git branch/status
+# git aliases
+alias gits='git status'
+alias gitd='git diff'
+alias gitl='git log'
+
+# command for git branch/status
 function parse_git_dirty {
   [[ $(git diff 2> /dev/null) != "" ]] && echo "*"
 }
