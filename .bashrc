@@ -106,6 +106,15 @@ fi
 alias gits='git status'
 alias gitd='git diff'
 alias gitl='git log'
+alias gita='git add'
+alias gitc='git commit'
+alias gitca='git commit --amend'
+alias gitck='git checkout'
+alias gitbr='git branch'
+alias gitph='git push'
+alias gitpl='git pull'
+alias gitri='git rebase -i'
+
 
 # command for git branch/status
 function parse_git_dirty {
