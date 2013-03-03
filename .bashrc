@@ -115,7 +115,6 @@ alias gitph='git push'
 alias gitpl='git pull'
 alias gitri='git rebase -i'
 
-
 # command for git branch/status
 function parse_git_dirty {
   [[ $(git diff 2> /dev/null) != "" ]] && echo "*"
@@ -132,8 +131,11 @@ export GIT_EDITOR='emacsclient -t -a=""'
 export GEM_HOME=/var/lib/gems/1.8/bin/
 export ANDROID_HOME=/home/darth10/pymatter/android-sdk-linux/
 export PATH=$PATH:/var/lib/gems/1.8/bin/bin/:/pi/pymatter/play/:/home/darth10/pymatter/android-sdk-linux/tools:/home/darth10/pymatter/android-sdk-linux/platform-tools:/home/darth10/pymatter/gitstick
-#cmatrix -a -b 5
 
+# emacs
+alias emx=$GIT_EDITOR
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
+
+#cmatrix -a -b -u 9
