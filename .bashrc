@@ -134,6 +134,8 @@ export PATH=$PATH:/var/lib/gems/1.8/bin/bin/:/pi/pymatter/play/:/home/darth10/py
 
 # emacs
 alias emx=$GIT_EDITOR
+alias wsemx="SUDO_EDITOR=\"emacsclient -c -a emacs\" sudoedit"
+alias semx="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
