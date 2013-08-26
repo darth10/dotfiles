@@ -103,17 +103,18 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # git aliases
-alias gits='git status'
 alias gitd='git diff'
 alias gitl='git log'
 alias gita='git add'
 alias gitc='git commit'
+alias gits='git status -s'
 alias gitca='git commit --amend'
 alias gitck='git checkout'
 alias gitbr='git branch'
 alias gitph='git push'
 alias gitpl='git pull'
 alias gitri='git rebase -i'
+alias gitst='git status'
 
 # command for git branch/status
 function parse_git_dirty {
