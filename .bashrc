@@ -117,13 +117,16 @@ alias gitri='git rebase -i'
 
 # command for git branch/status
 function parse_git_dirty {
-  [[ $(git diff 2> /dev/null) != "" ]] && echo "*"
+  [[ $(git diff 2> /dev/null) != "" ]] && echo " !!"
+}
+function parse_git_untracked {
+  [[ $(git status -s  2> /dev/null | grep -e '??') != "" ]] && echo " ??"
 }
 function parse_git_dirty_cached {
-  [[ $(git diff --cached 2> /dev/null) != "" ]] && echo "++"
+  [[ $(git diff --cached 2> /dev/null) != "" ]] && echo "++ "
 }
 function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ $(parse_git_dirty_cached)\1$(parse_git_dirty)/"
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ $(parse_git_dirty_cached)\1$(parse_git_untracked)$(parse_git_dirty)/"
 }
 
 export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\][ \w ]\[\e[0;36m\]$(parse_git_branch)\[\e[m\] \[\e[m\]> '
