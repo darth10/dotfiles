@@ -57,7 +57,7 @@ export EDITOR=$EMACS
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(tmux node lein)
+plugins=(lein node rvm pip jump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -75,14 +75,19 @@ function parse_git_dirty_cached {
   [[ $(git diff --cached 2> /dev/null) != "" ]] && echo "%{$fg_bold[green]%}++ "
 }
 function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ $(parse_git_dirty_cached)%{$fg_bold[blue]%}\1$(parse_git_untracked)$(parse_git_dirty)/"
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$(parse_git_dirty_cached)%{$fg_bold[blue]%}\1$(parse_git_untracked)$(parse_git_dirty) /"
 }
 function parse_git_repo {
   [[ $(git status 2> /dev/null) != "" ]] && echo "%{$fg_bold[green]%}"
 }
 
+# RVM
+function show_rvm_prompt {
+ [[ $(~/.rvm/bin/rvm-prompt i v) != "" ]] && echo "$(~/.rvm/bin/rvm-prompt i v) "
+}
+
 # Prompts
 export PROMPT='%{$fg_bold[blue]%}$(parse_git_repo)[ %~ ]%{$fg_bold[green]%} -> '
-export RPROMPT='%{$reset_color%} $(parse_git_branch) %{$fg_no_bold[green]%}%*%{$reset_color%}'
+export RPROMPT='%{$reset_color%}$(parse_git_branch)%{$fg_bold[green]%}$(show_rvm_prompt)%{$fg_no_bold[green]%}%*%{$reset_color%}'
 
 # cmatrix -a -b -u 7
