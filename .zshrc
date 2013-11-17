@@ -62,7 +62,7 @@ plugins=(lein node rvm pip jump)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/home/darth10/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/var/lib/gems/1.8/bin/bin/:/pi/pymatter/play/:/home/darth10/pymatter/android-sdk-linux/tools:/home/darth10/pymatter/android-sdk-linux/platform-tools:/home/darth10/pymatter/gitstick:/home/darth10/.rvm/bin
+export PATH=$PATH:/home/darth10/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/var/lib/gems/1.8/bin/bin/:/home/darth10/android-sdk-linux/tools:/home/darth10/android-sdk-linux/platform-tools:/home/darth10/projects/gitstick:/home/darth10/.rvm/bin
 
 # Functions for git branch/status
 function parse_git_dirty {

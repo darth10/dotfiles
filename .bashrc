@@ -133,8 +133,8 @@ function parse_git_branch {
 export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\][ \w ]\[\e[0;36m\]$(parse_git_branch)\[\e[m\] \[\e[m\]> '
 export GIT_EDITOR='emacsclient -t -a=""'
 export GEM_HOME=/var/lib/gems/1.8/bin/
-export ANDROID_HOME=/home/darth10/pymatter/android-sdk-linux/
-export PATH=$PATH:/var/lib/gems/1.8/bin/bin/:/pi/pymatter/play/:/home/darth10/pymatter/android-sdk-linux/tools:/home/darth10/pymatter/android-sdk-linux/platform-tools:/home/darth10/pymatter/gitstick
+export ANDROID_HOME=/home/darth10/android-sdk-linux/
+export PATH=$PATH:/var/lib/gems/1.8/bin/bin/:/pi/play/:/home/darth10/android-sdk-linux/tools:/home/darth10/android-sdk-linux/platform-tools:/home/darth10/projects/gitstick
 
 # emacs
 alias emx=$GIT_EDITOR
