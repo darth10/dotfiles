@@ -82,6 +82,10 @@ function parse_git_repo {
 }
 
 # RVM
+if test -f ~/.rvm/scripts/rvm; then
+   [ "$(type -t rvm)" = "function" ] || source ~/.rvm/scripts/rvm
+fi
+
 function show_rvm_prompt {
  [[ $(~/.rvm/bin/rvm-prompt i v) != "" ]] && echo "$(~/.rvm/bin/rvm-prompt i v) "
 }

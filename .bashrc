@@ -141,6 +141,11 @@ alias emx=$GIT_EDITOR
 alias wsemx="SUDO_EDITOR=\"emacsclient -c -a emacs\" sudoedit"
 alias semx="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 
+# RVM
+if test -f ~/.rvm/scripts/rvm; then
+    [ "$(type -t rvm)" = "function" ] || source ~/.rvm/scripts/rvm
+fi
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
