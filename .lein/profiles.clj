@@ -1,5 +1,7 @@
-{:user {:plugins [[lein-ancient "0.5.0-RC1"]
-                  [compojure-app/lein-template "0.2.7"]]
+{:user {:plugins [[lein-ancient "0.5.4"]
+                  [lein-try "0.4.1"]
+                  [lein-exec "0.3.2"]
+                  [compojure-app/lein-template "0.4.0"]]
         :dependencies [[cider/cider-nrepl "0.1.0-SNAPSHOT"]]
         :repl-options {:nrepl-middleware
                        [cider.nrepl.middleware.doc/wrap-doc
