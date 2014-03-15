@@ -4,6 +4,6 @@
                   [compojure-app/lein-template "0.4.0"]]
         :dependencies [[cider/cider-nrepl "0.1.0-SNAPSHOT"]]
         :repl-options {:nrepl-middleware
-                       [cider.nrepl.middleware.doc/wrap-doc
-                        cider.nrepl.middleware.complete/wrap-complete
-                        cider.nrepl.middleware.info/wrap-info]}}}
+                       [cider.nrepl.middleware.complete/wrap-complete
+                        cider.nrepl.middleware.info/wrap-info
+                        cider.nrepl.middleware.inspect/wrap-inspect]}}}
