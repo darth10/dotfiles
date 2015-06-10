@@ -17,7 +17,7 @@ set limitdiffs 1
 set uicolor #11000e
 set want_ttk 0
 set bgcolor #000000
-set fgcolor #0000db
+set fgcolor #0099ff
 set colors {green red blue magenta darkgrey brown orange}
 set diffcolors {red "#00a000" blue}
 set markbgcolor #e0e0ff
@@ -25,13 +25,13 @@ set diffcontext 3
 set selectbgcolor #00e600
 set extdifftool meld
 set perfile_attrs 0
-set geometry(main) 1400x989+0+0
-set geometry(state) normal
-set geometry(topwidth) 1398
+set geometry(main) 1280x942+0+24
+set geometry(state) zoomed
+set geometry(topwidth) 1278
 set geometry(topheight) 225
 set geometry(pwsash0) "766 1"
 set geometry(pwsash1) "1026 1"
 set geometry(botwidth) 984
-set geometry(botheight) 752
+set geometry(botheight) 710
 set permviews {{Network {} {--branches --remotes} {}}
 }
