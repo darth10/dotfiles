@@ -1,10 +1,12 @@
 #!/bin/bash
 
 sudo apt-get install hdapsd tp-smapi-dkms thinkfan xubuntu-restricted-extras \
-  git emacs24 wicd feh \
+  git emacs24 zsh wicd feh \
   x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra \
   i3 xkbset gtk-chtheme lxappearance \
   cowsay cmatrix
+
+chsh -s /usr/bin/zsh
 
 rsync -av --progress . ~ \
       --exclude .git \
