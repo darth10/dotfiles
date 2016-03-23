@@ -1,9 +1,9 @@
 #!/bin/bash
 
 sudo apt-get install hdapsd tp-smapi-dkms thinkfan xubuntu-restricted-extras \
-  git emacs24 zsh wicd feh \
+  git emacs24 zsh wicd htop feh \
   x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra \
-  i3 xkbset gtk-chtheme lxappearance \
+  i3 xkbset gtk-chtheme qt4-qtconfig lxappearance \
   cowsay cmatrix
 
 chsh -s /usr/bin/zsh
