@@ -157,17 +157,17 @@ bindsym $mod+F5 exec google-chrome
 bindsym $mod+F8 exec emacs
 bindsym $mod+t exec xfce4-terminal -e htop
 
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 exec --no-startup-id xmodmap /home/darth10/.xmodmap
-exec --no-startup-id xkbset sticky -twokey latchlock
+
 exec --no-startup-id xscreensaver -no-splash
-exec --no-startup-id /home/darth10/bin/xwatch
 exec --no-startup-id wicd
 exec --no-startup-id wicd-client -t
 exec --no-startup-id hdapsicon
 exec --no-startup-id dropbox start
 exec --no-startup-id feh --bg-fill ~/Dropbox/imgs/wallpapers/starf0rge.png
+exec --no-startup-id xkbset accessx sticky -twokey latchlock
+exec --no-startup-id xkbset exp 1 '=accessx' '=sticky' '=twokey' '=latchlock'
 
 new_window 1pixel
-
