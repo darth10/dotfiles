@@ -35,6 +35,8 @@ alias semx="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 export GIT_EDITOR=$EMACS
 export EDITOR=$EMACS
 
+alias 'adbserver'="/home/darth10/pymatter/android-sdk-linux/platform-tools/adb devices"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 

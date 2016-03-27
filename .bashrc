@@ -147,6 +147,7 @@ export PATH=$PATH:/var/lib/gems/1.8/bin/bin/:/pi/play/:/home/darth10/android-sdk
 alias emx=$GIT_EDITOR
 alias wsemx="SUDO_EDITOR=\"emacsclient -c -a emacs\" sudoedit"
 alias semx="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
+alias adbserver="/home/darth10/pymatter/android-sdk-linux/platform-tools/adb devices"
 
 # RVM
 if test -f ~/.rvm/scripts/rvm; then
