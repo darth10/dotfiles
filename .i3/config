@@ -147,12 +147,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}
-
 bindsym $mod+F5 exec google-chrome
 bindsym $mod+F8 exec emacs
 bindsym $mod+t exec xfce4-terminal -e htop
@@ -171,3 +165,9 @@ exec --no-startup-id xkbset accessx sticky -twokey latchlock
 exec --no-startup-id xkbset exp 1 '=accessx' '=sticky' '=twokey' '=latchlock'
 
 new_window 1pixel
+
+bar {
+        status_command    python3 ~/.i3/status.py
+        position          bottom
+        workspace_buttons yes
+}
