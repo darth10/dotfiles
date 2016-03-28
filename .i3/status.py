@@ -9,7 +9,8 @@ status.register("clock",
 #
 # Note: requires libpulseaudio from PyPI
 status.register("pulseaudio",
-    format="♪: {volume}",)
+    format="♪: {volume}",
+    format_muted="♪: --",)
 
 # shows disk usage of / and /pi/
 # Format:
@@ -28,7 +29,7 @@ status.register("temp",
 
 # The battery monitor has many formatting options, see README for details
 status.register("battery",
-    format="{status} {percentage:.2f}% {remaining:%E%hh:%Mm}",
+    format= "{status} {percentage:.0f}% {remaining:%E%hh:%Mm}",
     alert=True,
     alert_percentage=10,
     status={
@@ -52,7 +53,7 @@ status.register("network",
 # Note: requires both netifaces and basiciw (for essid and quality)
 status.register("network",
     interface="wlan0",
-    format_up="{interface}: {quality:03.0f}% {v4cidr}",
+    format_up="{interface}: {quality:.0f}% {v4cidr}",
     format_down="")
 
 status.run()
