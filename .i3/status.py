@@ -17,15 +17,11 @@ status.register("pulseaudio",
 # 42/128G [86G]
 status.register("disk",
     path="/",
-    format="/ [{avail}G]",)
+    format="/ [{avail:.1f}G]",)
 
 status.register("disk",
     path="/pi/",
-    format="/pi/ [{avail}G]",)
-
-# Shows your CPU temperature, if you have a Intel CPU
-status.register("temp",
-    format="{temp:.0f}°C",)
+    format="/pi/ [{avail:.1f}G]",)
 
 # The battery monitor has many formatting options, see README for details
 status.register("battery",
@@ -53,7 +49,12 @@ status.register("network",
 # Note: requires both netifaces and basiciw (for essid and quality)
 status.register("network",
     interface="wlan0",
-    format_up="{interface}: {quality:.0f}% {v4cidr}",
+    format_up="{interface}: {v4cidr}",
     format_down="")
+
+# Memory usage, CPU usage and temperature
+status.register("mem", format="{avail_mem}/{total_mem} GB", divisor=1024**3)
+status.register("temp", format="{temp:.0f}°C", interval=3)
+status.register("cpu_usage", format="{usage}%", interval=3)
 
 status.run()
