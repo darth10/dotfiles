@@ -56,12 +56,11 @@ status.register("battery",
     })
 
 status.register("temp",
-    format="T: {temp:.0f}°C",
+    format="{temp:.0f}°C",
     interval=3)
 
 status.register("cpu_usage",
-    format="P: {usage}%",
+    format="{usage}%",
     interval=3)
-
 
 status.run()
