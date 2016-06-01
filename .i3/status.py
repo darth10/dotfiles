@@ -42,7 +42,7 @@ status.register("network",
     format_down="")
 
 status.register("mem",
-    format="M: {avail_mem}/{total_mem} G",
+    format="M: {percent_used_mem}%  {used_mem}/{total_mem} G",
     divisor=1024**3, interval=3)
 
 status.register("battery",
