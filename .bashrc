@@ -148,6 +148,7 @@ alias emx=$GIT_EDITOR
 alias wsemx="SUDO_EDITOR=\"emacsclient -c -a emacs\" sudoedit"
 alias semx="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 alias adbserver="/home/darth10/pymatter/android-sdk-linux/platform-tools/adb devices"
+alias erc="emacs -q -e erc"
 
 # RVM
 if test -f ~/.rvm/scripts/rvm; then

@@ -31,6 +31,7 @@ alias gitst="git status"
 alias emx=$EMACS
 alias wsemx="SUDO_EDITOR=\"emacsclient -c -a emacs\" sudoedit"
 alias semx="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
+alias erc="emacs -q -e erc"
 
 export GIT_EDITOR=$EMACS
 export EDITOR=$EMACS
