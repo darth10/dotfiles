@@ -71,6 +71,10 @@ plugins=(git git-flow jump lein node ruby rake rvm rails python pip)
 
 source $ZSH/oh-my-zsh.sh
 
+if [[ $TERM = dumb ]]; then
+  unset zle_bracketed_paste
+fi
+
 # Customize to your needs...
 export PATH=$PATH:/home/darth10/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/var/lib/gems/1.8/bin/bin/:/home/darth10/android-sdk-linux/tools:/home/darth10/android-sdk-linux/platform-tools:/home/darth10/projects/gitstick:/home/darth10/.rvm/bin
 
