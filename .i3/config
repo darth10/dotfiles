@@ -150,6 +150,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+F5 exec google-chrome
 bindsym $mod+F8 exec emacs --debug-init
 bindsym $mod+t exec xfce4-terminal -e htop
+bindsym $mod+d exec thunar
 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
