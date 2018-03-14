@@ -14,6 +14,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # zsh as default
 chsh -s /usr/bin/zsh
 
+# install EVM
+curl -fsSkL https://raw.github.com/rejeep/evm/master/go | bash
+
 # install RVM and signing key
 gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable --ruby
