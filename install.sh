@@ -18,6 +18,9 @@ chsh -s /usr/bin/zsh
 gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable --ruby
 
+# install haskell-stack
+curl -sSL https://get.haskellstack.org/ | sh
+
 rsync -av --progress . ~ \
       --exclude .git \
       --exclude .gitmodules \
