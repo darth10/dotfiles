@@ -44,4 +44,4 @@ git reset --hard
 cd ..
 
 # install i3pystatus
-sudo pip3 install i3pystatus netifaces colour basiciw libpulseaudio
+sudo pip3 install i3pystatus netifaces colour basiciw pulsectl
