@@ -3,26 +3,16 @@
 sudo apt-get install \
      hdapsd tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev \
      git emacs24 editorconfig zsh curl wicd htop tree feh \
-     python-pip python-dev python3 python3-pip python3-dev virtualenv \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      i3 xkbset gtk-chtheme qt4-qtconfig lxappearance \
-     cowsay cmatrix
+     cowsay cmatrix \
+     python-pip python-dev python3 python3-pip python3-dev virtualenv
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # zsh as default
 chsh -s /usr/bin/zsh
-
-# install EVM
-curl -fsSkL https://raw.github.com/rejeep/evm/master/go | bash
-
-# install RVM and signing key
-gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl -sSL https://get.rvm.io | bash -s stable --ruby
-
-# install haskell-stack
-curl -sSL https://get.haskellstack.org/ | sh
 
 rsync -av --progress . ~ \
       --exclude .git \
@@ -51,3 +41,17 @@ cd ..
 
 # install i3pystatus
 sudo pip3 install i3pystatus netifaces colour basiciw pulsectl
+
+# install EVM
+curl -fsSkL https://raw.github.com/rejeep/evm/master/go | bash
+
+# install RVM and signing key
+gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+# install Haskell dependencies
+curl -sSL https://get.haskellstack.org/ | sh
+stack install cabal-install
+cabal update
+cabal install Cabal		# upgrade Cabal
+cabal install happy hasktags stylish-haskell present ghc-mod hlint hoogle structured-haskell-mode hindent

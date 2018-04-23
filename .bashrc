@@ -141,7 +141,7 @@ export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\][ \w ]\[\e[0;36m\]$(parse_git_bra
 export GIT_EDITOR='emacsclient -t -a=""'
 export GEM_HOME=/var/lib/gems/1.8/bin/
 export ANDROID_HOME=/home/darth10/android-sdk-linux/
-export PATH=$PATH:/home/darth10/.rvm/bin:/home/darth10/.evm/bin
+export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.rvm/bin:/home/darth10/.evm/bin:/home/darth10/.cabal/bin
 
 # emacs
 alias emx=$GIT_EDITOR

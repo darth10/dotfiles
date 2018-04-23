@@ -76,7 +76,7 @@ if [[ $TERM = dumb ]]; then
 fi
 
 # Customize to your needs...
-export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/darth10/bin:/home/darth10/.rvm/bin:/home/darth10/.evm/bin
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/darth10/.local/bin:/home/darth10/.rvm/bin:/home/darth10/.evm/bin:/home/darth10/.cabal/bin
 
 # Functions for git branch/status
 function parse_git_dirty {
