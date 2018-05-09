@@ -2,11 +2,14 @@
 
 sudo apt-get install \
      hdapsd tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev \
-     git emacs24 editorconfig zsh curl wicd htop tree feh \
+     git emacs24 editorconfig zsh curl wicd htop tree feh docker \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      i3 xkbset gtk-chtheme qt4-qtconfig lxappearance \
      cowsay cmatrix \
      python-pip python-dev python3 python3-pip python3-dev virtualenv
+
+# set current user permissions for docker
+sudo usermod -a -G docker $(whoami)
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
