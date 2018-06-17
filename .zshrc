@@ -36,6 +36,11 @@ alias erc="emacs -q -e erc"
 export GIT_EDITOR=$EMACS
 export EDITOR=$EMACS
 
+# set location of packages
+#
+# export STACK_ROOT=/data/.stack
+# export NUGET_PACKAGES=/data/.nuget.packages
+
 alias 'adbserver'="/home/darth10/pymatter/android-sdk-linux/platform-tools/adb devices"
 
 # Set to this to use case-sensitive completion

@@ -64,3 +64,7 @@ stack install cabal-install
 cabal update
 cabal install Cabal		# upgrade Cabal
 cabal install happy hasktags stylish-haskell present ghc-mod hlint hoogle structured-haskell-mode hindent
+sudo mkdir /etc/stack/
+sudo chmod a+rw /etc/stack
+sudo echo 'allow-different-user: true' > /etc/stack/config.yaml
+sudo chmod a+rw /etc/stack/config.yaml

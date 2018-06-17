@@ -143,6 +143,11 @@ export GEM_HOME=/var/lib/gems/1.8/bin/
 export ANDROID_HOME=/home/darth10/android-sdk-linux/
 export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.rvm/bin:/home/darth10/.evm/bin:/home/darth10/.cabal/bin
 
+# set location of packages
+#
+# export STACK_ROOT=/data/.stack
+# export NUGET_PACKAGES=/data/.nuget.packages
+
 # emacs
 alias emx=$GIT_EDITOR
 alias wsemx="SUDO_EDITOR=\"emacsclient -c -a emacs\" sudoedit"
