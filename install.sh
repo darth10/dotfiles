@@ -68,3 +68,9 @@ sudo mkdir /etc/stack/
 sudo chmod a+rw /etc/stack
 sudo echo 'allow-different-user: true' > /etc/stack/config.yaml
 sudo chmod a+rw /etc/stack/config.yaml
+
+# install emacs config
+if [ ! -d "~/.emacs.d"] then
+   cd ~
+   git clone https://github.com/darth10/emacs.d.git .emacs.d
+fi
