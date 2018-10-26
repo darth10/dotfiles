@@ -1,7 +1,5 @@
 #!/bin/bash
 
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-
 sudo apt-get install \
      hdapsd tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev \
      git emacs24 editorconfig zsh curl wicd htop tree feh docker \
@@ -9,7 +7,6 @@ sudo apt-get install \
      i3 xkbset gtk-chtheme qt4-qtconfig lxappearance \
      sbcl cl-quicklisp stumpwm \
      cowsay cmatrix \
-     nodejs \
      python-pip python-dev python3 python3-pip python3-dev virtualenv
 
 # set current user permissions for docker
@@ -49,7 +46,9 @@ cd ..
 # install i3pystatus
 sudo pip3 install i3pystatus netifaces colour basiciw pulsectl
 
-# install global npm modules
+# install node and global npm modules
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install nodejs
 sudo npm install -g sass less
 
 # install EVM
