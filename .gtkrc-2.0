@@ -1,8 +1,9 @@
 # DO NOT EDIT! This file will be overwritten by LXAppearance.
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
-gtk-theme-name="terminus"
-gtk-icon-theme-name="Acvamarin-Icons"
+include "/home/darth10/.gtkrc-2.0.mine"
+gtk-theme-name="Paper"
+gtk-icon-theme-name="Paper"
 gtk-font-name="Consolas 11"
 gtk-cursor-theme-name="DMZ-White"
 gtk-cursor-theme-size=0
@@ -16,4 +17,3 @@ gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
 gtk-xft-rgba="rgb"
-include "/home/darth10/.gtkrc-2.0.mine"

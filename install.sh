@@ -87,3 +87,10 @@ if [ ! -d "~/.stumpwm.d"] then
    git submodule init
    git submodule update
 fi
+
+# install theme
+cd ~
+sudo apt-get install paper-icon-theme
+git clone https://github.com/snwh/paper-gtk-theme.git
+./paper-gtk-theme/install-gtk-theme.sh
+rm -Rf ./paper-gtk-theme
