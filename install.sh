@@ -7,6 +7,7 @@ sudo apt-get install \
      git emacs24 editorconfig zsh curl wicd htop tree feh docker \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      i3 xkbset gtk-chtheme qt4-qtconfig lxappearance \
+     sbcl cl-quicklisp stumpwm \
      cowsay cmatrix \
      nodejs \
      python-pip python-dev python3 python3-pip python3-dev virtualenv
@@ -69,8 +70,21 @@ sudo chmod a+rw /etc/stack
 sudo echo 'allow-different-user: true' > /etc/stack/config.yaml
 sudo chmod a+rw /etc/stack/config.yaml
 
+# install quicklisp
+sudo sbcl --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(quicklisp-quickstart:install :path #p"/usr/share/quicklisp/quicklisp")'a
+
 # install emacs config
 if [ ! -d "~/.emacs.d"] then
    cd ~
    git clone https://github.com/darth10/emacs.d.git .emacs.d
+fi
+
+# install stumpwm config
+if [ ! -d "~/.stumpwm.d"] then
+   cd ~
+   git clone https://github.com/darth10/stumpwm.d.git .stumpwm.d
+   ln -s ~/.stumpwm.d/init.lisp ~/.stumpwmrc
+   cd ~/.stumpwm.d
+   git submodule init
+   git submodule update
 fi
