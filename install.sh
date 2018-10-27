@@ -70,7 +70,9 @@ sudo echo 'allow-different-user: true' > /etc/stack/config.yaml
 sudo chmod a+rw /etc/stack/config.yaml
 
 # install quicklisp
-sudo sbcl --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(quicklisp-quickstart:install :path #p"/usr/share/quicklisp/quicklisp")'a
+sbcl --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(quicklisp-quickstart:install :path ".quicklisp/")'
+sbcl --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(ql-util:without-prompting (ql:add-to-init-file))'
+sbcl --eval '(ql:quickload "clx-truetype")'
 
 # install emacs config
 if [ ! -d "~/.emacs.d"] then
