@@ -6,7 +6,7 @@ sudo apt-get install \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      i3 xkbset gtk-chtheme qt4-qtconfig lxappearance \
      sbcl cl-quicklisp stumpwm \
-     cowsay cmatrix \
+     cowsay cmatrix baobab \
      python-pip python-dev python3 python3-pip python3-dev virtualenv
 
 # set current user permissions for docker
