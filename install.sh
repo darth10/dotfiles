@@ -73,6 +73,7 @@ sudo chmod a+rw /etc/stack/config.yaml
 sbcl --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(quicklisp-quickstart:install :path ".quicklisp/")'
 sbcl --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(ql-util:without-prompting (ql:add-to-init-file))'
 sbcl --eval '(ql:quickload "clx-truetype")'
+sbcl --eval '(ql:quickload "xembed")'
 
 # install emacs config
 if [ ! -d "~/.emacs.d"] then
