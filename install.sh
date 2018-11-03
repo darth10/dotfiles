@@ -74,6 +74,7 @@ sbcl --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(quicklisp-quickstart
 sbcl --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(ql-util:without-prompting (ql:add-to-init-file))'
 sbcl --eval '(ql:quickload "clx-truetype")'
 sbcl --eval '(ql:quickload "xembed")'
+sbcl --eval '(ql:quickload "swank")'
 
 # install emacs config
 if [ ! -d "~/.emacs.d"] then
