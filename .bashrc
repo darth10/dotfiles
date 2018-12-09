@@ -141,12 +141,15 @@ export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\][ \w ]\[\e[0;36m\]$(parse_git_bra
 export GIT_EDITOR='emacsclient -t -a=""'
 export GEM_HOME=/var/lib/gems/1.8/bin/
 export ANDROID_HOME=/home/darth10/android-sdk-linux/
-export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.rvm/bin:/home/darth10/.evm/bin:/home/darth10/.cabal/bin
 
 # set location of packages
 #
 # export STACK_ROOT=/data/.stack
 # export NUGET_PACKAGES=/data/.nuget.packages
+# export GOPATH=/data/.go
+# export PATH=$PATH:$GOPATH/bin
+
+export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.rvm/bin:/home/darth10/.evm/bin:/home/darth10/.cabal/bin
 
 # emacs
 alias emx=$GIT_EDITOR
@@ -160,7 +163,6 @@ if test -f ~/.rvm/scripts/rvm; then
     [ "$(type -t rvm)" = "function" ] || source ~/.rvm/scripts/rvm
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 #cmatrix -a -b -u 9

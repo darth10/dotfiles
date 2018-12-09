@@ -40,6 +40,8 @@ export EDITOR=$EMACS
 #
 # export STACK_ROOT=/data/.stack
 # export NUGET_PACKAGES=/data/.nuget.packages
+# export GOPATH=/data/.go
+# export PATH=$PATH:$GOPATH/bin
 
 alias 'adbserver'="/home/darth10/pymatter/android-sdk-linux/platform-tools/adb devices"
 
