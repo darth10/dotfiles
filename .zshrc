@@ -112,7 +112,7 @@ function show_rvm_prompt {
 }
 
 # Prompts
-export PROMPT='%{$fg_bold[blue]%}$(parse_git_repo)[ %~ ]%{$fg_bold[green]%} -> '
+export PROMPT='%{$fg_bold[blue]%}$(parse_git_repo)[ $(hostname):%~ ] -> %{$reset_color%}'
 export RPROMPT='%{$reset_color%}$(parse_git_branch)%{$fg_bold[green]%}$(show_rvm_prompt)%{$fg_no_bold[green]%}%*%{$reset_color%}'
 
 # cmatrix -a -b -u 7
