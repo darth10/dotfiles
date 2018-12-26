@@ -108,7 +108,7 @@ if test -f ~/.rvm/scripts/rvm; then
 fi
 
 function show_rvm_prompt {
- [[ $(~/.rvm/bin/rvm-prompt i v) != "" ]] && echo "$(~/.rvm/bin/rvm-prompt i v) "
+ [[ -f ~/.rvm/scripts/rvm ]] && [[ $(~/.rvm/bin/rvm-prompt i v) != "" ]] && echo "$(~/.rvm/bin/rvm-prompt i v) "
 }
 
 # Prompts
