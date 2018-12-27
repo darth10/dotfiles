@@ -149,7 +149,7 @@ export ANDROID_HOME=/home/darth10/android-sdk-linux/
 # export GOPATH=/data/.go
 # export PATH=$PATH:$GOPATH/bin
 
-export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.rvm/bin:/home/darth10/.evm/bin:/home/darth10/.cabal/bin
+export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.cabal/bin
 
 alias emx=$GIT_EDITOR
 alias wsemx="SUDO_EDITOR=\"emacsclient -c -a emacs\" sudoedit"
@@ -157,12 +157,5 @@ alias semx="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 alias adbserver="/home/darth10/pymatter/android-sdk-linux/platform-tools/adb devices"
 alias n="dsh -aM -c"
 alias erc="emacs -q -e erc"
-
-# RVM
-if test -f ~/.rvm/scripts/rvm; then
-    [ "$(type -t rvm)" = "function" ] || source ~/.rvm/scripts/rvm
-fi
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 # cmatrix -a -b -u 9

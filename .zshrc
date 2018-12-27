@@ -75,7 +75,7 @@ alias n="dsh -aM -c"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow jump lein node ruby rake rvm rails python pip)
+plugins=(git git-flow jump lein node python pip)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,7 +84,7 @@ if [[ $TERM = dumb ]]; then
 fi
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/darth10/.local/bin:/home/darth10/.rvm/bin:/home/darth10/.evm/bin:/home/darth10/.cabal/bin
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/darth10/.local/bin:/home/darth10/.cabal/bin
 
 # Functions for git branch/status
 function parse_git_dirty {
@@ -103,17 +103,8 @@ function parse_git_repo {
   [[ $(git status 2> /dev/null) != "" ]] && echo "%{$fg_bold[green]%}"
 }
 
-# RVM
-if test -f ~/.rvm/scripts/rvm; then
-   [ "$(type rvm)" = "function" ] || source ~/.rvm/scripts/rvm
-fi
-
-function show_rvm_prompt {
- [[ -f ~/.rvm/scripts/rvm ]] && [[ $(~/.rvm/bin/rvm-prompt i v) != "" ]] && echo "$(~/.rvm/bin/rvm-prompt i v) "
-}
-
 # Prompts
 export PROMPT='%{$fg_bold[blue]%}$(parse_git_repo)[ $(hostname):%~ ] -> %{$reset_color%}'
-export RPROMPT='%{$reset_color%}$(parse_git_branch)%{$fg_bold[green]%}$(show_rvm_prompt)%{$fg_no_bold[green]%}%*%{$reset_color%}'
+export RPROMPT='%{$reset_color%}$(parse_git_branch)%{$fg_no_bold[green]%}%*%{$reset_color%}'
 
 # cmatrix -a -b -u 7

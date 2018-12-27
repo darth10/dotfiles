@@ -51,13 +51,6 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install nodejs
 sudo npm install -g sass less
 
-# install EVM
-curl -fsSkL https://raw.github.com/rejeep/evm/master/go | bash
-
-# install RVM and signing key
-gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl -sSL https://get.rvm.io | bash -s stable --ruby
-
 # install Haskell dependencies
 curl -sSL https://get.haskellstack.org/ | sh
 stack install cabal-install
