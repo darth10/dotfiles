@@ -151,11 +151,11 @@ export ANDROID_HOME=/home/darth10/android-sdk-linux/
 
 export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.rvm/bin:/home/darth10/.evm/bin:/home/darth10/.cabal/bin
 
-# emacs
 alias emx=$GIT_EDITOR
 alias wsemx="SUDO_EDITOR=\"emacsclient -c -a emacs\" sudoedit"
 alias semx="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 alias adbserver="/home/darth10/pymatter/android-sdk-linux/platform-tools/adb devices"
+alias n="dsh -aM -c"
 alias erc="emacs -q -e erc"
 
 # RVM

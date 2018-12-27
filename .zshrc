@@ -43,7 +43,8 @@ export EDITOR=$EMACS
 # export GOPATH=/data/.go
 # export PATH=$PATH:$GOPATH/bin
 
-alias 'adbserver'="/home/darth10/pymatter/android-sdk-linux/platform-tools/adb devices"
+alias adbserver="/home/darth10/pymatter/android-sdk-linux/platform-tools/adb devices"
+alias n="dsh -aM -c"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
