@@ -2,7 +2,7 @@
 
 sudo apt-get install \
      hdapsd tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev \
-     git emacs25 editorconfig zsh curl wicd htop tree feh docker \
+     git emacs25 editorconfig zsh curl wicd htop tree feh docker glibc-doc-reference \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      i3 xkbset gtk-chtheme qt4-qtconfig lxappearance \
      sbcl cl-quicklisp stumpwm \
