@@ -41,7 +41,7 @@ cd thinkhdaps
 make
 sudo make install
 git reset --hard
-cd ..
+cd ~
 
 # install i3pystatus
 sudo pip3 install i3pystatus netifaces colour basiciw pulsectl
