@@ -73,6 +73,8 @@ sbcl --eval '(ql:quickload "swank")'
 if [ ! -d "~/.emacs.d"] then
    cd ~
    git clone git@github.com:darth10/emacs.d.git .emacs.d
+   cd ~/.emacs.d
+   make
 fi
 
 # install stumpwm config
