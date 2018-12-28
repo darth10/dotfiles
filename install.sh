@@ -71,16 +71,14 @@ sbcl --eval '(ql:quickload "swank")'
 
 # install emacs config
 if [ ! -d "~/.emacs.d"] then
-   cd ~
-   git clone git@github.com:darth10/emacs.d.git .emacs.d
+   git clone git@github.com:darth10/emacs.d.git ~/.emacs.d
    cd ~/.emacs.d
    make
 fi
 
 # install stumpwm config
 if [ ! -d "~/.stumpwm.d"] then
-   cd ~
-   git clone git@github.com:darth10/stumpwm.d.git .stumpwm.d
+   git clone git@github.com:darth10/stumpwm.d.git ~/.stumpwm.d
    ln -s ~/.stumpwm.d/init.lisp ~/.stumpwmrc
    cd ~/.stumpwm.d
    git submodule init
