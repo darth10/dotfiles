@@ -71,7 +71,7 @@ sbcl --eval '(ql:quickload "swank")'
 
 # install emacs config
 if [ ! -d "~/.emacs.d"] then
-   git clone git@github.com:darth10/emacs.d.git ~/.emacs.d
+   git clone git@github.com:darth10/holy-emacs.git ~/.emacs.d
    cd ~/.emacs.d
    make
 fi
