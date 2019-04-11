@@ -85,7 +85,4 @@ fi
 
 # install theme
 cd ~
-sudo apt-get install paper-icon-theme
-git clone git@github.com:snwh/paper-gtk-theme.git
-./paper-gtk-theme/install-gtk-theme.sh
-rm -Rf ./paper-gtk-theme
+sudo apt-get install paper-icon-theme arc-theme
