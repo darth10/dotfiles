@@ -69,8 +69,6 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -78,21 +76,13 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias l='ls -lah'
-alias la='ls -lAh'
-alias ll='ls -lh'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -101,27 +91,6 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-# git aliases
-alias gitd='git diff'
-alias gitl='git log'
-alias gita='git add'
-alias gitb='git branch'
-alias gitc='git commit'
-alias gits='git status -s'
-alias gitca='git commit --amend'
-alias gitck='git checkout'
-alias gitu='git push'
-alias gituo='git push origin'
-alias gituom='git push origin master'
-alias gituod='git push origin develop'
-alias gitp='git pull'
-alias gitpo='git pull origin'
-alias gitpom='git pull origin master'
-alias gitpod='git pull origin develop'
-alias gitpom='git pull origin master'
-alias gitri='git rebase -i'
-alias gitst='git status'
 
 # command for git branch/status
 function parse_git_dirty {
@@ -137,25 +106,16 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ $(parse_git_dirty_cached)\1$(parse_git_untracked)$(parse_git_dirty)/"
 }
 
+EMACS='emacsclient -t -a=""'
+
 export PS1='\[\e[1;34m\][ $HOSTNAME:\w ]\[\e[0;36m\]$(parse_git_branch)\[\e[1;34m\] > \[\e[m\]'
-export GIT_EDITOR='emacsclient -t -a=""'
+export GIT_EDITOR=$EMACS
+export EDITOR=$EMACS
 export GEM_HOME=/var/lib/gems/1.8/bin/
 export ANDROID_HOME=/home/darth10/android-sdk-linux/
-
-# set location of packages
-#
-# export STACK_ROOT=/data/.stack
-# export NUGET_PACKAGES=/data/.nuget.packages
-# export GOPATH=/data/.go
-# export PATH=$PATH:$GOPATH/bin
-
-export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.cabal/bin
-
-alias emx=$GIT_EDITOR
-alias wsemx="SUDO_EDITOR=\"emacsclient -c -a emacs\" sudoedit"
-alias semx="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
-alias adbserver="/home/darth10/pymatter/android-sdk-linux/platform-tools/adb devices"
-alias n="dsh -aM -c"
-alias erc="emacs -q -e erc"
+export STACK_ROOT=/data/.stack
+export NUGET_PACKAGES=/data/.nuget.packages
+export GOPATH=/data/.go
+export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.cabal/bin:/usr/local/go/bin:$GOPATH/bin
 
 # cmatrix -a -b -u 9

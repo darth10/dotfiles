@@ -11,43 +11,16 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="candy"
 EMACS='emacsclient -t -a=""'
 
-alias gitd="git diff"
-alias gitl="git log"
-alias gita="git add"
-alias gitb="git branch"
-alias gitc="git commit"
-alias gits="git status -s"
-alias gitca="git commit --amend"
-alias gitck="git checkout"
-alias gitu="git push"
-alias gituo="git push origin"
-alias gituom="git push origin master"
-alias gituod="git push origin develop"
-alias gitp="git pull"
-alias gitpo="git pull origin"
-alias gitpom="git pull origin master"
-alias gitpod="git pull origin develop"
-alias gitpom="git pull origin master"
-alias gitri="git rebase -i"
-alias gitst="git status"
-
-alias emx=$EMACS
-alias wsemx="SUDO_EDITOR=\"emacsclient -c -a emacs\" sudoedit"
-alias semx="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
-alias erc="emacs -q -e erc"
+# Alias definitions.
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
 
 export GIT_EDITOR=$EMACS
 export EDITOR=$EMACS
-
-# set location of packages
-#
-# export STACK_ROOT=/data/.stack
-# export NUGET_PACKAGES=/data/.nuget.packages
-# export GOPATH=/data/.go
-# export PATH=$PATH:$GOPATH/bin
-
-alias adbserver="/home/darth10/pymatter/android-sdk-linux/platform-tools/adb devices"
-alias n="dsh -aM -c"
+export STACK_ROOT=/data/.stack
+export NUGET_PACKAGES=/data/.nuget.packages
+export GOPATH=/data/.go
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
