@@ -1,3 +1,6 @@
+[[ $TERM = "tramp" ]] && unsetopt zle && PS1='$ ' && return
+[[ $TERM = "dumb" ]] && unset zle_bracketed_paste && unsetopt zle && PS1='$ '
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -78,10 +81,6 @@ alias n="dsh -aM -c"
 plugins=(git git-flow jump lein node python pip)
 
 source $ZSH/oh-my-zsh.sh
-
-if [[ $TERM = dumb ]]; then
-  unset zle_bracketed_paste
-fi
 
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/darth10/.local/bin:/home/darth10/.cabal/bin
