@@ -4,7 +4,7 @@ sudo apt install \
      tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev tofrodos \
      git emacs25 editorconfig zsh curl wicd htop tree feh docker glibc-doc-reference \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
-     i3 xkbset gtk-chtheme qt4-qtconfig lxappearance \
+     xkbset gtk-chtheme qt4-qtconfig lxappearance \
      guile-2.2 guile-2.2-libs guile-2.2-doc sbcl cl-quicklisp stumpwm \
      cowsay cmatrix baobab \
      python-pip python-dev python3 python3-pip python3-dev virtualenv
@@ -44,9 +44,6 @@ rm dropbox.deb
 # sudo make install
 # git reset --hard
 # cd ~
-
-# install i3pystatus
-sudo pip3 install i3pystatus netifaces colour basiciw pulsectl
 
 # install node and global npm modules
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
