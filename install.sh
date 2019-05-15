@@ -2,7 +2,7 @@
 
 sudo apt install \
      tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev tofrodos \
-     git emacs25 editorconfig zsh curl wicd htop tree feh docker glibc-doc-reference \
+     git emacs25 editorconfig zsh curl wicd resolvconf htop tree feh docker glibc-doc-reference \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      xkbset gtk-chtheme qt4-qtconfig lxappearance \
      guile-2.2 guile-2.2-libs guile-2.2-doc sbcl cl-quicklisp stumpwm \
