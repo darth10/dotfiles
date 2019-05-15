@@ -86,3 +86,8 @@ fi
 cd ~
 sudo add-apt-repository ppa:snwh/pulp
 sudo apt-get install paper-icon-theme arc-theme
+
+# install fingerprint reader authentication
+sudo add-apt-repository ppa:fingerprint/fprint
+sudo apt-get install libpam-fprintd fprintd fprint-demo
+# use fprintd-enroll and fprintd-verify
