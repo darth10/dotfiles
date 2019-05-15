@@ -85,4 +85,5 @@ fi
 
 # install theme
 cd ~
+sudo add-apt-repository ppa:snwh/pulp
 sudo apt-get install paper-icon-theme arc-theme
