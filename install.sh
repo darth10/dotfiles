@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install \
+sudo apt install \
      hdapsd tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev tofrodos \
      git emacs25 editorconfig zsh curl wicd htop tree feh docker glibc-doc-reference \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
