@@ -47,7 +47,7 @@ rm dropbox.deb
 
 # install node and global npm modules
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt-get install nodejs
+sudo apt install nodejs
 sudo npm install -g sass less
 
 # install Haskell dependencies
@@ -85,9 +85,9 @@ fi
 # install theme
 cd ~
 sudo add-apt-repository ppa:snwh/pulp
-sudo apt-get install paper-icon-theme arc-theme
+sudo apt install paper-icon-theme arc-theme
 
 # install fingerprint reader authentication
 sudo add-apt-repository ppa:fingerprint/fprint
-sudo apt-get install libpam-fprintd fprintd fprint-demo
+sudo apt install libpam-fprintd fprintd fprint-demo
 # use fprintd-enroll and fprintd-verify
