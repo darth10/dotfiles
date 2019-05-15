@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt install \
-     hdapsd tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev tofrodos \
+     tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev tofrodos \
      git emacs25 editorconfig zsh curl wicd htop tree feh docker glibc-doc-reference \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      i3 xkbset gtk-chtheme qt4-qtconfig lxappearance \
@@ -33,16 +33,17 @@ wget -O - "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.02.1
 sudo dpkg -i dropbox.deb
 rm dropbox.deb
 
-# install HDAPS indicator
-git submodule init
-git submodule update
-cd thinkhdaps
-./autogen.sh
-./configure
-make
-sudo make install
-git reset --hard
-cd ~
+# install HDAPS daemon and indicator (if needed)
+# sudo apt install hdapsd
+# git submodule init
+# git submodule update
+# cd thinkhdaps
+# ./autogen.sh
+# ./configure
+# make
+# sudo make install
+# git reset --hard
+# cd ~
 
 # install i3pystatus
 sudo pip3 install i3pystatus netifaces colour basiciw pulsectl
