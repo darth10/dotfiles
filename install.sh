@@ -62,11 +62,11 @@ sudo echo 'allow-different-user: true' > /etc/stack/config.yaml
 sudo chmod a+rw /etc/stack/config.yaml
 
 # install quicklisp
-sbcl --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(quicklisp-quickstart:install :path ".quicklisp/")'
-sbcl --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(ql-util:without-prompting (ql:add-to-init-file))'
-sbcl --eval '(ql:quickload "clx-truetype")'
-sbcl --eval '(ql:quickload "xembed")'
-sbcl --eval '(ql:quickload "swank")'
+sbcl --non-interactive --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(quicklisp-quickstart:install :path ".quicklisp/")'
+sbcl --non-interactive --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(ql-util:without-prompting (ql:add-to-init-file))'
+sbcl --non-interactive --eval '(ql:quickload "clx-truetype")' # may require (xft:cache-fonts)
+sbcl --non-interactive --eval '(ql:quickload "xembed")'
+sbcl --non-interactive --eval '(ql:quickload "swank")'
 
 # install emacs config
 if [ ! -d "~/.emacs.d"] then
