@@ -26,9 +26,9 @@ rsync -av --progress . ~ \
 
 # install DropBox
 ## for 32-bit
-# wget -O - "https://www.dropbox.com/download?dl=packages/debian/dropbox_2015.10.28_i386.deb" > dropbox.deb
+# wget -O - "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.02.14_i386.deb" > dropbox.deb
 ## for 64-bit
-wget -O - "https://www.dropbox.com/download?dl=packages/debian/dropbox_2015.10.28_amd64.deb" > dropbox.deb
+wget -O - "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.02.14_amd64.deb" > dropbox.deb
 sudo dpkg -i dropbox.deb
 rm dropbox.deb
 
