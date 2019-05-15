@@ -22,6 +22,7 @@ rsync -av --progress . ~ \
       --exclude .git \
       --exclude .gitmodules \
       --exclude install.sh \
+      --exclude README.md \
       --exclude thinkhdaps
 
 # install DropBox
