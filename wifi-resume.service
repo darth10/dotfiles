@@ -1,6 +1,7 @@
-#/etc/systemd/system/wifi-resume.service
-
-# Activate using: sudo systemctl enable wifi-resume.service
+# Activate using:
+# sudo cp ./wifi-resume.service /etc/systemd/system/
+# sudo chmod a+rwx /etc/systemd/system/wifi-resume.service
+# sudo systemctl enable wifi-resume.service
 
 [Unit]
 Description=Restart networkmanager at resume
