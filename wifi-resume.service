@@ -11,7 +11,7 @@ After=hybrid-sleep.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/systemctl restart network-manager.service
+ExecStart=/bin/systemctl restart systemd-resolved network-manager
 
 [Install]
 WantedBy=suspend.target
