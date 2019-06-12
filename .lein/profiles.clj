@@ -8,7 +8,7 @@
          [compojure-app/lein-template "0.4.8"]]}
  :repl {:plugins
         [[refactor-nrepl "2.4.0"]
-         [cider/cider-nrepl "0.20.0-SNAPSHOT"]]
+         [cider/cider-nrepl "0.22.0-beta5"]]
         :dependencies
         [[org.clojure/tools.nrepl "0.2.13"]
          [compliment "0.3.8"]]}}
