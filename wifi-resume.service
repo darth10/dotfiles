@@ -3,6 +3,9 @@
 # sudo chmod a+rwx /etc/systemd/system/wifi-resume.service
 # sudo systemctl enable wifi-resume.service
 
+# Also, ensure resolved has the right systemd config
+# sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
+
 [Unit]
 Description=Restart networkmanager at resume
 After=suspend.target
