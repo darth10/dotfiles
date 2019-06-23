@@ -7,6 +7,7 @@ sudo apt install \
      xkbset gtk-chtheme qt4-qtconfig lxappearance \
      guile-2.2 guile-2.2-libs guile-2.2-doc sbcl cl-quicklisp stumpwm \
      cowsay cmatrix baobab \
+     libpng-dev zlib1g-dev libpoppler-glib-dev libpoppler-private-dev \
      python-pip python-dev python3 python3-pip python3-dev virtualenv
 
 # set current user permissions for docker
