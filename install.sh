@@ -55,9 +55,9 @@ sudo npm install -g sass less
 # install Haskell dependencies
 curl -sSL https://get.haskellstack.org/ | sh
 stack install cabal-install
-cabal update
-cabal install Cabal		# upgrade Cabal
-cabal install happy hasktags stylish-haskell present ghc-mod hlint hoogle structured-haskell-mode hindent
+stack exec -- cabal update
+stack exec -- cabal install Cabal		# upgrade Cabal
+# stack exec -- cabal install happy hasktags stylish-haskell present ghc-mod hlint hoogle structured-haskell-mode hindent
 sudo mkdir /etc/stack/
 sudo chmod a+rw /etc/stack
 sudo echo 'allow-different-user: true' > /etc/stack/config.yaml
