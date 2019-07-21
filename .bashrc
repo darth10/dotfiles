@@ -117,9 +117,10 @@ export ANDROID_HOME=/home/darth10/android-sdk-linux/
 # Set location of packages
 # export STACK_ROOT=/data/.stack
 # export NUGET_PACKAGES=/data/.nuget.packages
-# export GOPATH=/data/.go
-# export PATH=$PATH:$GOPATH/bin
+# export GOROOT=/usr/local/go
+# export GOPATH=~/.go
+# export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
-export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.cabal/bin:/usr/local/go/bin
+export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.cabal/bin
 
 # cmatrix -a -b -u 9

@@ -24,8 +24,9 @@ export ANDROID_HOME=/home/darth10/android-sdk-linux/
 # Set location of packages
 # export STACK_ROOT=/data/.stack
 # export NUGET_PACKAGES=/data/.nuget.packages
-# export GOPATH=/data/.go
-# export PATH=$PATH:$GOPATH/bin
+# export GOROOT=/usr/local/go
+# export GOPATH=~/.go
+# export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
