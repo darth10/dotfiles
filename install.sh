@@ -71,14 +71,14 @@ sbcl --non-interactive --eval '(ql:quickload "xembed")'
 sbcl --non-interactive --eval '(ql:quickload "swank")'
 
 # install emacs config
-if [ ! -d "~/.emacs.d"] then
+if [ ! -d "~/.emacs.d"]; then
    git clone git@github.com:darth10/holy-emacs.git ~/.emacs.d
    cd ~/.emacs.d
    make
 fi
 
 # install stumpwm config
-if [ ! -d "~/.stumpwm.d"] then
+if [ ! -d "~/.stumpwm.d"]; then
    git clone git@github.com:darth10/stumpwm.d.git ~/.stumpwm.d
    cd ~/.stumpwm.d
    make
