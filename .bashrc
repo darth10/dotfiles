@@ -87,6 +87,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Function to change emacs directory
+function set-emacs-directory {
+    ln -snf $1 ~/.emacs.d
+}
+
 # Functions for git branch/status
 function parse_git_dirty {
   [[ $(git diff 2> /dev/null) != "" ]] && echo " !!"
