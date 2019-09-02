@@ -70,18 +70,24 @@ sbcl --non-interactive --eval '(ql:quickload "clx-truetype")' # may require (xft
 sbcl --non-interactive --eval '(ql:quickload "xembed")'
 sbcl --non-interactive --eval '(ql:quickload "swank")'
 
+if [ ! -d "~/projects"]; then
+    mkdir ~/projects
+fi
+
 # install emacs config
 if [ ! -d "~/.emacs.d"]; then
-   git clone git@github.com:darth10/holy-emacs.git ~/.emacs.d
-   cd ~/.emacs.d
-   make
+    git clone git@github.com:darth10/holy-emacs.git ~/projects/holy-emacs
+    ln -s ~/projects/holy-emacs ~/.emacs.d
+    cd ~/.emacs.d
+    make
 fi
 
 # install stumpwm config
 if [ ! -d "~/.stumpwm.d"]; then
-   git clone git@github.com:darth10/stumpwm.d.git ~/.stumpwm.d
-   cd ~/.stumpwm.d
-   make
+    git clone git@github.com:darth10/stumpwm.d.git ~/projects/stumpwm.d
+    ln -s ~/projects/stumpwm.d ~/.stumpwm.d
+    cd ~/.stumpwm.d
+    make
 fi
 
 # install theme
