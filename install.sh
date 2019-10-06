@@ -75,6 +75,7 @@ sbcl --non-interactive --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(ql
 sbcl --non-interactive --eval '(ql:quickload "clx-truetype")' # may require (xft:cache-fonts)
 sbcl --non-interactive --eval '(ql:quickload "xembed")'
 sbcl --non-interactive --eval '(ql:quickload "swank")'
+sbcl --non-interactive --eval '(ql:quickload "slynk")'
 
 if [ ! -d "~/projects"]; then
     mkdir ~/projects
