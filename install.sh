@@ -81,15 +81,17 @@ if [ ! -d "~/projects"]; then
 fi
 
 # install emacs config
-if [ ! -d "~/.emacs.d"]; then
-    git clone git@github.com:darth10/holy-emacs.git ~/projects/holy-emacs
-    ln -s ~/projects/holy-emacs ~/.emacs.d
-    cd ~/.emacs.d
-    make
+if [ ! -d "~/.doom.d" ]; then
+    git clone git@github.com:darth10/doom.d.git ~/.doom.d
+fi
+if [ ! -d "~/.emacs.d" ]; then
+    git clone git@github.com:hlissner/doom-emacs.git ~/projects/doom-emacs
+    ln -s ~/projects/doom-emacs ~/.emacs.d
+    ~/.emacs.d/bin/doom install
 fi
 
 # install stumpwm config
-if [ ! -d "~/.stumpwm.d"]; then
+if [ ! -d "~/.stumpwm.d" ]; then
     git clone git@github.com:darth10/stumpwm.d.git ~/projects/stumpwm.d
     ln -s ~/projects/stumpwm.d ~/.stumpwm.d
     cd ~/.stumpwm.d
