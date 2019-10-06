@@ -29,3 +29,4 @@ alias emx='emacsclient -t -a=""'
 alias wsemx="SUDO_EDITOR=\"emacsclient -c -a emacs\" sudoedit"
 alias semx="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 alias erc="emacs -q -e erc"
+alias doom='~/.emacs.d/bin/doom'
