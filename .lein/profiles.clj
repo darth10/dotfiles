@@ -4,7 +4,7 @@
          [lein-pprint "1.2.0"]
          [lein-try "0.4.3"]
          [http-kit/lein-template "1.0.0-SNAPSHOT"]
-         [chestnut/lein-template "0.17.0"]
+         [chestnut/lein-template "0.18.0"]
          [compojure-app/lein-template "0.4.8"]]}
  :repl {:plugins
         [[refactor-nrepl "2.5.0-SNAPSHOT"]
