@@ -56,7 +56,7 @@ rm ripgrep.deb
 # install node and global npm modules
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install nodejs
-sudo npm install -g sass less
+sudo npm install -g sass less js-beautify stylelint
 
 # install Haskell dependencies
 curl -sSL https://get.haskellstack.org/ | sh
