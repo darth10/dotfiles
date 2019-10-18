@@ -66,7 +66,7 @@ stack exec -- cabal install Cabal       # upgrade Cabal
 # stack exec -- cabal install happy hasktags stylish-haskell present ghc-mod hlint hoogle structured-haskell-mode hindent
 sudo mkdir /etc/stack/
 sudo chmod a+rw /etc/stack
-sudo echo 'allow-different-user: true' > /etc/stack/config.yaml
+sudo echo 'allow-different-user: true' | sudo tee /etc/stack/config.yaml
 sudo chmod a+rw /etc/stack/config.yaml
 
 # install quicklisp
