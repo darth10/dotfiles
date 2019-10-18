@@ -77,7 +77,7 @@ sbcl --non-interactive --eval '(ql:quickload "xembed")'
 sbcl --non-interactive --eval '(ql:quickload "swank")'
 sbcl --non-interactive --eval '(ql:quickload "slynk")'
 
-if [ ! -d "~/projects"]; then
+if [ ! -d "~/projects" ]; then
     mkdir ~/projects
 fi
 
