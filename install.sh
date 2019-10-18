@@ -95,12 +95,12 @@ fi
 if [ ! -d "$HOME/.stumpwm.d" ]; then
     git clone git@github.com:darth10/stumpwm.d.git ~/projects/stumpwm.d
     ln -s ~/projects/stumpwm.d ~/.stumpwm.d
-    cd ~/.stumpwm.d
+    cd ~/.stumpwm.d || return
     make
 fi
 
 # install theme
-cd ~
+cd ~ || return
 sudo add-apt-repository ppa:snwh/pulp
 sudo apt install paper-icon-theme arc-theme
 
