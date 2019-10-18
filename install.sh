@@ -1,9 +1,9 @@
 #!/bin/bash
 
 sudo apt install \
-     tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev tofrodos \
-     git emacs25 editorconfig zsh curl wicd resolvconf htop tree feh docker.io glibc-doc-reference \
-     clang-6.0 libclang-6.0-dev \
+     tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev tofrodos tree \
+     git emacs25 editorconfig zsh shellcheck curl wicd resolvconf htop feh docker.io \
+     glibc-doc-reference clang-6.0 libclang-6.0-dev \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      xkbset gtk-chtheme qt4-qtconfig lxappearance \
      guile-2.2 guile-2.2-libs guile-2.2-doc sbcl cl-quicklisp stumpwm \
