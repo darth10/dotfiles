@@ -77,22 +77,22 @@ sbcl --non-interactive --eval '(ql:quickload "xembed")'
 sbcl --non-interactive --eval '(ql:quickload "swank")'
 sbcl --non-interactive --eval '(ql:quickload "slynk")'
 
-if [ ! -d "~/projects" ]; then
+if [ ! -d "$HOME/projects" ]; then
     mkdir ~/projects
 fi
 
 # install emacs config
-if [ ! -d "~/.doom.d" ]; then
+if [ ! -d "$HOME/.doom.d" ]; then
     git clone git@github.com:darth10/doom.d.git ~/.doom.d
 fi
-if [ ! -d "~/.emacs.d" ]; then
+if [ ! -d "$HOME/.emacs.d" ]; then
     git clone git@github.com:hlissner/doom-emacs.git ~/projects/doom-emacs
     ln -s ~/projects/doom-emacs ~/.emacs.d
     ~/.emacs.d/bin/doom install
 fi
 
 # install stumpwm config
-if [ ! -d "~/.stumpwm.d" ]; then
+if [ ! -d "$HOME/.stumpwm.d" ]; then
     git clone git@github.com:darth10/stumpwm.d.git ~/projects/stumpwm.d
     ln -s ~/projects/stumpwm.d ~/.stumpwm.d
     cd ~/.stumpwm.d
