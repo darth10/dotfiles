@@ -13,7 +13,7 @@ sudo apt install \
      gnuchess stockfish
 
 # set current user permissions for docker
-sudo usermod -a -G docker $(whoami)
+sudo usermod -a -G docker "$(whoami)"
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
