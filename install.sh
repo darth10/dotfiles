@@ -37,7 +37,7 @@ sudo dpkg -i dropbox.deb
 rm dropbox.deb
 
 # install ripgrep
-wget -O "https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb" > ripgrep.deb
+wget -O - "https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb" > ripgrep.deb
 sudo dpkg -i ripgrep.deb
 rm ripgrep.deb
 
