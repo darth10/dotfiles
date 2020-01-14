@@ -36,6 +36,14 @@ wget -O - "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.02.1
 sudo dpkg -i dropbox.deb
 rm dropbox.deb
 
+#install keybase
+## for 32-bit
+# wget -O - "https://prerelease.keybase.io/keybase_i386.deb" > keybase.deb
+## for 64-bit
+wget -O - "https://prerelease.keybase.io/keybase_amd64.deb" > keybase.deb
+sudo dpkg -i ./keybase.deb
+rm keybase.deb
+
 # install ripgrep
 wget -O - "https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb" > ripgrep.deb
 sudo dpkg -i ripgrep.deb
