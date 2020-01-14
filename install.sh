@@ -61,9 +61,10 @@ rm ripgrep.deb
 # git reset --hard
 # cd ~
 
-# install node and global npm modules
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt install nodejs
+# install nvm and global node modules
+curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o ~/.local/bin/n
+chmod a+x ~/.local/bin/n
+sudo ~/.local/bin/n lts
 sudo npm install -g sass less js-beautify stylelint
 
 # install Haskell dependencies
