@@ -61,7 +61,7 @@ rm ripgrep.deb
 # git reset --hard
 # cd ~
 
-# install nvm and global node modules
+# install n node version manager and global node modules
 curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o ~/.local/bin/n
 chmod a+x ~/.local/bin/n
 sudo ~/.local/bin/n lts
