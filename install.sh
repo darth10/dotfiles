@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt install \
-     tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev tofrodos tree \
+     tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev tofrodos tree meson \
      git emacs25 editorconfig zsh shellcheck curl wicd resolvconf htop feh docker.io \
      glibc-doc-reference clang-6.0 libclang-6.0-dev \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
