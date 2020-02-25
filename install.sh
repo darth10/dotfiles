@@ -65,7 +65,7 @@ rm ripgrep.deb
 curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o ~/.local/bin/n
 chmod a+x ~/.local/bin/n
 sudo ~/.local/bin/n lts
-sudo npm install -g sass less js-beautify stylelint
+sudo npm install -g sass less uglify-js js-beautify stylelint
 
 # install Haskell dependencies
 curl -sSL https://get.haskellstack.org/ | sh
