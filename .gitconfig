@@ -1,3 +1,6 @@
 [user]
 	name = Akhil Wali
 	email = akhil.wali.10@gmail.com
+	signingkey = CBA0458B682A8544
+[commit]
+	gpgsign = true
