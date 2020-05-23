@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 sudo apt install \
      tp-smapi-dkms thinkfan xubuntu-restricted-addons libiw-dev tofrodos tree meson \
