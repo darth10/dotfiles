@@ -1,15 +1,15 @@
 #!/bin/bash
 
 sudo apt install \
-     tp-smapi-dkms thinkfan xubuntu-restricted-extras libiw-dev tofrodos tree meson \
-     git emacs25 editorconfig zsh shellcheck curl wicd resolvconf htop feh docker.io \
-     glibc-doc-reference clang-6.0 libclang-6.0-dev \
+     tp-smapi-dkms thinkfan xubuntu-restricted-addons libiw-dev tofrodos tree meson \
+     git emacs editorconfig zsh shellcheck curl resolvconf htop feh docker.io ripgrep \
+     glibc-doc-reference clang-6.0 libclang-6.0-dev leiningen keybase \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
-     xkbset gtk-chtheme qt4-qtconfig lxappearance \
+     xkbset gtk-chtheme lxappearance \
      guile-2.2 guile-2.2-libs guile-2.2-doc sbcl cl-quicklisp stumpwm \
      cowsay cmatrix baobab exfat-fuse exfat-utils flameshot \
      libpng-dev zlib1g-dev libpoppler-glib-dev libpoppler-private-dev \
-     python-pip python-dev python3 python3-pip python3-dev virtualenv \
+     dropbox python3-pip python3-dev virtualenv \
      gnuchess stockfish
 
 # set current user permissions for docker
@@ -27,27 +27,6 @@ rsync -av --progress . ~ \
       --exclude install.sh \
       --exclude README.md \
       --exclude thinkhdaps
-
-# install DropBox
-## for 32-bit
-# wget -O - "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.02.14_i386.deb" > dropbox.deb
-## for 64-bit
-wget -O - "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.02.14_amd64.deb" > dropbox.deb
-sudo dpkg -i dropbox.deb
-rm dropbox.deb
-
-#install keybase
-## for 32-bit
-# wget -O - "https://prerelease.keybase.io/keybase_i386.deb" > keybase.deb
-## for 64-bit
-wget -O - "https://prerelease.keybase.io/keybase_amd64.deb" > keybase.deb
-sudo dpkg -i ./keybase.deb
-rm keybase.deb
-
-# install ripgrep
-wget -O - "https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb" > ripgrep.deb
-sudo dpkg -i ripgrep.deb
-rm ripgrep.deb
 
 # install HDAPS daemon and indicator (if needed)
 # sudo apt install hdapsd
