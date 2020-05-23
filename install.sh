@@ -60,9 +60,11 @@ sudo echo 'allow-different-user: true' | sudo tee /etc/stack/config.yaml
 sudo chmod a+rw /etc/stack/config.yaml
 
 # install quicklisp
-sbcl --non-interactive --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(quicklisp-quickstart:install :path ".quicklisp/")'
-sbcl --non-interactive --load /usr/share/cl-quicklisp/quicklisp.lisp --eval '(ql-util:without-prompting (ql:add-to-init-file))'
-sbcl --non-interactive --eval '(ql:quickload "clx-truetype")' # may require (xft:cache-fonts)
+sbcl --non-interactive --load /usr/share/common-lisp/source/quicklisp/quicklisp.lisp --eval '(quicklisp-quickstart:install :path ".quicklisp/")'
+# start using ~/.quicklisp/setup.lisp
+sbcl --non-interactive --load ~/.quicklisp/setup.lisp --eval '(ql-util:without-prompting (ql:add-to-init-file))'
+git clone git@github.com:l04m33/clx-truetype.git ~/.quicklisp/local-projects/clx-truetype
+sbcl --non-interactive --eval '(ql:quickload "clx-truetype")' --eval '(xft:cache-fonts)'
 sbcl --non-interactive --eval '(ql:quickload "xembed")'
 sbcl --non-interactive --eval '(ql:quickload "swank")'
 sbcl --non-interactive --eval '(ql:quickload "slynk")'
