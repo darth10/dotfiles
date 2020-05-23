@@ -121,6 +121,6 @@ export ANDROID_HOME=/home/darth10/android-sdk-linux/
 # export GOPATH=~/.go
 # export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
-export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.cabal/bin
+export PATH=$PATH:/home/darth10/.cabal/bin
 
 # cmatrix -a -b -u 9

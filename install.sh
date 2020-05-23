@@ -42,9 +42,10 @@ rsync -av --progress . ~ \
 # cd ~
 
 # install n node version manager and global node modules
-curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o ~/.local/bin/n
-chmod a+x ~/.local/bin/n
-sudo ~/.local/bin/n lts
+curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o ~/n
+chmod a+x ~/n
+sudo mv ~/n /usr/local/bin/
+sudo n lts
 sudo npm install -g sass less uglify-js js-beautify stylelint npm-check-updates
 
 # install Haskell dependencies
