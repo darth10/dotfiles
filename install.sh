@@ -93,7 +93,7 @@ fi
 
 # install theme
 cd ~ || return
-sudo add-apt-repository ppa:snwh/pulp
+sudo add-apt-repository -u ppa:snwh/ppa
 sudo apt install paper-icon-theme arc-theme
 
 # install fingerprint reader authentication
