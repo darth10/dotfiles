@@ -6,7 +6,7 @@ sudo apt install \
      git emacs editorconfig zsh shellcheck curl resolvconf htop feh docker.io ripgrep \
      glibc-doc-reference clang-6.0 libclang-6.0-dev leiningen keybase \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
-     xkbset gtk-chtheme lxappearance \
+     xkbset gtk-chtheme lxappearance qt5ct qtchooser \
      guile-2.2 guile-2.2-libs guile-2.2-doc sbcl cl-quicklisp stumpwm \
      cowsay cmatrix baobab exfat-fuse exfat-utils flameshot \
      libpng-dev zlib1g-dev libpoppler-glib-dev libpoppler-private-dev \
