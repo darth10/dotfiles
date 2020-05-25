@@ -60,9 +60,9 @@ sudo npm install -g sass less uglify-js js-beautify stylelint npm-check-updates
 # install Haskell dependencies
 curl -sSL https://get.haskellstack.org/ | sh
 stack install cabal-install
-stack exec -- cabal update
-stack exec -- cabal install Cabal       # upgrade Cabal
-# stack exec -- cabal install happy hasktags stylish-haskell present ghc-mod hlint hoogle structured-haskell-mode hindent
+stack exec --no-ghc-package-path -- cabal update
+stack exec --no-ghc-package-path -- cabal install Cabal       # upgrade Cabal
+# stack exec --no-ghc-package-path -- cabal install happy hasktags stylish-haskell present ghc-mod hlint hoogle structured-haskell-mode hindent
 sudo mkdir /etc/stack/
 sudo chmod a+rw /etc/stack
 sudo echo 'allow-different-user: true' | sudo tee /etc/stack/config.yaml
