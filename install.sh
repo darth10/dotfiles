@@ -47,6 +47,10 @@ rsync -av --progress . ~ \
 # git reset --hard
 # cd ~
 
+if [ ! -d "$HOME/.local/bin" ]; then
+    mkdir ~/.local/bin
+fi
+
 # install n node version manager and global node modules
 curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o ~/.local/bin/n
 chmod a+x ~/.local/bin/n
