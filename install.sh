@@ -13,6 +13,12 @@ sudo apt install \
      dropbox python3-pip python3-dev virtualenv \
      gnuchess stockfish
 
+# install dependencies for building emacs from source
+sudo apt install \
+     autoconf automake libtool texinfo build-essential xorg-dev libgtk-3-dev \
+     libjpeg-dev libncurses5-dev libdbus-1-dev libgif-dev libtiff-dev libm17n-dev \
+     libpng-dev librsvg2-dev libotf-dev libgnutls28-dev libxml2-dev libxpm-dev
+
 # set current user permissions for docker
 sudo usermod -a -G docker "$(whoami)"
 
