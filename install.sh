@@ -8,7 +8,7 @@ sudo apt install \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      xkbset gtk-chtheme lxappearance qt5ct qtchooser \
      guile-2.2 guile-2.2-libs guile-2.2-doc sbcl cl-quicklisp stumpwm \
-     cowsay cmatrix baobab exfat-fuse exfat-utils flameshot \
+     cowsay cmatrix baobab exfat-fuse exfat-utils flameshot fd-find \
      libpng-dev zlib1g-dev libpoppler-glib-dev libpoppler-private-dev \
      dropbox python3-pip python3-dev virtualenv \
      gnuchess stockfish
