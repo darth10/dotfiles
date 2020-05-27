@@ -4,13 +4,13 @@ set -euo pipefail
 sudo apt install \
      tp-smapi-dkms thinkfan xubuntu-restricted-addons libiw-dev tofrodos tree meson \
      git emacs editorconfig zsh shellcheck curl resolvconf htop feh docker.io ripgrep \
-     glibc-doc-reference clang-6.0 libclang-6.0-dev leiningen keybase \
+     glibc-doc-reference clang-6.0 libclang-6.0-dev rtags leiningen keybase \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      xkbset gtk-chtheme lxappearance qt5ct qtchooser \
      guile-2.2 guile-2.2-libs guile-2.2-doc sbcl cl-quicklisp stumpwm \
      cowsay cmatrix baobab exfat-fuse exfat-utils flameshot fd-find \
      libpng-dev zlib1g-dev libpoppler-glib-dev libpoppler-private-dev \
-     dropbox python3-pip python3-dev virtualenv \
+     dropbox python3-pip python3-dev virtualenv markdown \
      gnuchess stockfish
 
 # install dependencies for building emacs from source
