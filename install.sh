@@ -69,7 +69,7 @@ curl -sSL https://get.haskellstack.org/ | sh
 stack install cabal-install
 stack exec --no-ghc-package-path -- cabal update
 stack exec --no-ghc-package-path -- cabal install Cabal       # Upgrade Cabal
-stack exec --no-ghc-package-path -- cabal install hasktags hlint hoogle hindent
+stack exec --no-ghc-package-path -- cabal install hasktags hlint hoogle
 sudo mkdir /etc/stack/
 sudo chmod a+rw /etc/stack
 echo 'allow-different-user: true' | sudo tee /etc/stack/config.yaml
