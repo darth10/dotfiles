@@ -105,6 +105,10 @@ if [ ! -d "$HOME/.emacs.d" ]; then
     ~/.emacs.d/bin/doom install
 fi
 
+# Install Cask.
+curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+ln -s ~/.cask/bin/cask ~/.local/bin/cask
+
 # Install stumpwm config.
 if [ ! -d "$HOME/.stumpwm.d" ]; then
     git clone git@github.com:darth10/stumpwm.d.git ~/projects/stumpwm.d
