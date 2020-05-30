@@ -65,7 +65,7 @@ stack exec --no-ghc-package-path -- cabal install Cabal       # upgrade Cabal
 # stack exec --no-ghc-package-path -- cabal install happy hasktags stylish-haskell present ghc-mod hlint hoogle structured-haskell-mode hindent
 sudo mkdir /etc/stack/
 sudo chmod a+rw /etc/stack
-sudo echo 'allow-different-user: true' | sudo tee /etc/stack/config.yaml
+echo 'allow-different-user: true' | sudo tee /etc/stack/config.yaml
 sudo chmod a+rw /etc/stack/config.yaml
 
 # install Mono compiler
