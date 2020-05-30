@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
+# Install (most) programs.
 sudo apt install \
      tp-smapi-dkms thinkfan xubuntu-restricted-addons libiw-dev tofrodos tree meson \
      git emacs editorconfig zsh shellcheck curl resolvconf htop feh docker.io ripgrep \
@@ -13,21 +14,20 @@ sudo apt install \
      dropbox python3-pip python3-dev virtualenv markdown \
      gnuchess stockfish
 
-# install dependencies for building emacs from source
+# Install dependencies for building emacs from source.
 sudo apt install \
      autoconf automake libtool texinfo build-essential xorg-dev libgtk-3-dev \
      libjpeg-dev libncurses5-dev libdbus-1-dev libgif-dev libtiff-dev libm17n-dev \
      libpng-dev librsvg2-dev libotf-dev libgnutls28-dev libxml2-dev libxpm-dev
 
-# set current user permissions for docker
+# Set current user permissions for docker.
 sudo usermod -a -G docker "$(whoami)"
 
-# install oh-my-zsh
+# Install oh-my-zsh and set as default.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# zsh as default
 chsh -s /usr/bin/zsh
 
+# Copy all files to $HOME directory.
 rsync -av --progress . ~ \
       --exclude .git \
       --exclude .gitmodules \
@@ -35,7 +35,8 @@ rsync -av --progress . ~ \
       --exclude README.md \
       --exclude thinkhdaps
 
-# install HDAPS daemon and indicator (if needed)
+# Install HDAPS daemon and indicator (if needed).
+#
 # sudo apt install hdapsd
 # git submodule init
 # git submodule update
@@ -47,38 +48,44 @@ rsync -av --progress . ~ \
 # git reset --hard
 # cd ~
 
+# Create $HOME/projects directory.
+if [ ! -d "$HOME/projects" ]; then
+    mkdir ~/projects
+fi
+
+# Create $HOME/.local/bin directory.
 if [ ! -d "$HOME/.local/bin" ]; then
     mkdir ~/.local/bin
 fi
 
-# install n node version manager and global node modules
+# Install n node version manager and global node modules.
 curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o ~/.local/bin/n
 chmod a+x ~/.local/bin/n
 sudo ~/.local/bin/n lts
 sudo npm install -g sass less uglify-js js-beautify stylelint npm-check-updates
 
-# install Haskell dependencies
+# Install Stack and Haskell dependencies.
 curl -sSL https://get.haskellstack.org/ | sh
 stack install cabal-install
 stack exec --no-ghc-package-path -- cabal update
-stack exec --no-ghc-package-path -- cabal install Cabal       # upgrade Cabal
-# stack exec --no-ghc-package-path -- cabal install happy hasktags stylish-haskell present ghc-mod hlint hoogle structured-haskell-mode hindent
+stack exec --no-ghc-package-path -- cabal install Cabal       # Upgrade Cabal
+stack exec --no-ghc-package-path -- cabal install hasktags hlint hoogle hindent
 sudo mkdir /etc/stack/
 sudo chmod a+rw /etc/stack
 echo 'allow-different-user: true' | sudo tee /etc/stack/config.yaml
 sudo chmod a+rw /etc/stack/config.yaml
 
-# install Mono compiler
+# Install Mono compiler.
 sudo apt install ca-certificates
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 sudo apt update
 sudo apt install mono-roslyn
 
-# install terraform-switcher
+# Install Terraform switcher.
 curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | sudo bash
 
-# install quicklisp
+# Install quicklisp and stumpwm dependencies.
 sbcl --non-interactive --load /usr/share/common-lisp/source/quicklisp/quicklisp.lisp --eval '(quicklisp-quickstart:install :path ".quicklisp/")'
 # start using ~/.quicklisp/setup.lisp
 sbcl --non-interactive --load ~/.quicklisp/setup.lisp --eval '(ql-util:without-prompting (ql:add-to-init-file))'
@@ -88,11 +95,7 @@ sbcl --non-interactive --eval '(ql:quickload "xembed")'
 sbcl --non-interactive --eval '(ql:quickload "swank")'
 sbcl --non-interactive --eval '(ql:quickload "slynk")'
 
-if [ ! -d "$HOME/projects" ]; then
-    mkdir ~/projects
-fi
-
-# install emacs config
+# Install Doom Emacs and private Emacs config.
 if [ ! -d "$HOME/.doom.d" ]; then
     git clone git@github.com:darth10/doom.d.git ~/.doom.d
 fi
@@ -102,7 +105,7 @@ if [ ! -d "$HOME/.emacs.d" ]; then
     ~/.emacs.d/bin/doom install
 fi
 
-# install stumpwm config
+# Install stumpwm config.
 if [ ! -d "$HOME/.stumpwm.d" ]; then
     git clone git@github.com:darth10/stumpwm.d.git ~/projects/stumpwm.d
     ln -s ~/projects/stumpwm.d ~/.stumpwm.d
@@ -110,12 +113,12 @@ if [ ! -d "$HOME/.stumpwm.d" ]; then
     make
 fi
 
-# install theme
+# Install icons and themes.
 cd ~
 sudo add-apt-repository -u ppa:snwh/ppa
 sudo apt install paper-icon-theme arc-theme
 
-# install fingerprint reader authentication
+# Install fingerprint reader authentication.
 sudo apt install libpam-fprintd fprintd fprint-doc
-# use `fprintd-enroll` and `fprintd-verify`
-# enable for login using `sudo pam-auth-update`
+# Use `fprintd-enroll` and `fprintd-verify` to record fingerprint.
+# Enable fingerprint for login using `sudo pam-auth-update`.
