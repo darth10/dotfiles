@@ -12,6 +12,7 @@ sudo apt install \
      cowsay cmatrix baobab exfat-fuse exfat-utils flameshot fd-find pv \
      libpng-dev zlib1g-dev libpoppler-glib-dev libpoppler-private-dev \
      dropbox python3-pip python3-dev virtualenv markdown \
+     imagemagick kitty kitty-terminfo
      gnuchess stockfish
 
 # Install dependencies for building emacs from source.
