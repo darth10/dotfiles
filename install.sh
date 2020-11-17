@@ -4,7 +4,7 @@ set -euo pipefail
 # Install (most) programs.
 sudo apt install \
      tp-smapi-dkms thinkfan xubuntu-restricted-addons libiw-dev tofrodos tree meson \
-     git emacs editorconfig zsh shellcheck curl resolvconf htop feh docker.io ripgrep \
+     git editorconfig zsh shellcheck curl resolvconf htop feh docker.io ripgrep \
      glibc-doc-reference clang-6.0 libclang-6.0-dev rtags leiningen keybase net-tools \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      xfce4-goodies xfce4-volumed xkbset gtk-chtheme lxappearance pasystray qt5ct qtchooser \
@@ -14,12 +14,6 @@ sudo apt install \
      dropbox python3-pip python3-dev virtualenv markdown \
      imagemagick kitty kitty-terminfo
      gnuchess stockfish
-
-# Install dependencies for building emacs from source.
-sudo apt install \
-     autoconf automake libtool texinfo build-essential xorg-dev libgtk-3-dev \
-     libjpeg-dev libncurses5-dev libdbus-1-dev libgif-dev libtiff-dev libm17n-dev \
-     libpng-dev librsvg2-dev libotf-dev libgnutls28-dev libxml2-dev libxpm-dev
 
 # Set current user permissions for docker.
 sudo usermod -a -G docker "$(whoami)"
@@ -95,6 +89,24 @@ sbcl --non-interactive --eval '(ql:quickload "clx-truetype")' --eval '(xft:cache
 sbcl --non-interactive --eval '(ql:quickload "xembed")'
 sbcl --non-interactive --eval '(ql:quickload "swank")'
 sbcl --non-interactive --eval '(ql:quickload "slynk")'
+
+# Install dependencies for building Emacs from source.
+sudo apt install autoconf automake build-essential libdbus-1-dev libgif-dev \
+    libgnutls28-dev libgtk-3-dev libjansson-dev libjpeg-dev libm17n-dev \
+    libmagickwand-dev libncurses5-dev libotf-dev libpng-dev librsvg2-dev libtiff-dev \
+    libtool libxml2-dev libxpm-dev texinfo xorg-dev
+
+# Build and install Emacs from source.
+if [ ! -d "$HOME/projects/emacs" ]; then
+    git clone git://git.sv.gnu.org/emacs.git ~/projects/emacs
+    cd ~/projects/emacs
+
+    git checkout emacs-27.1
+    ./configure --with-mailutils --with-json --with-imagemagick
+    make
+    sudo make install
+    cd ~
+fi
 
 # Install Doom Emacs and private Emacs config.
 if [ ! -d "$HOME/.doom.d" ]; then
