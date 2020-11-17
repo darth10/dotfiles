@@ -128,6 +128,7 @@ if [ ! -d "$HOME/.stumpwm.d" ]; then
     ln -s ~/projects/stumpwm.d ~/.stumpwm.d
     cd ~/.stumpwm.d
     make
+    cd ~
 fi
 
 # Install icons and themes.
