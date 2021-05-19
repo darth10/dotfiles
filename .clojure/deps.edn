@@ -38,7 +38,11 @@
     refactor-nrepl/refactor-nrepl {:mvn/version "2.5.1"}}
    :main-opts
    ["-m" "nrepl.cmdline" "--middleware"
-    "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}}
+    "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
+
+  :poly
+  {:extra-deps {polylith/clj-poly {:mvn/version "0.1.0-alpha9"}}
+   :main-opts  ["-m" "polylith.clj.core.poly-cli.core"]}}
 
  ;; Provider attributes
 

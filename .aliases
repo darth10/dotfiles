@@ -32,4 +32,5 @@ alias erc="emacs -q -e erc"
 alias doom='~/.emacs.d/bin/doom'
 
 alias ml='dsh -aM'
+alias poly='clj -M:poly'
 alias pnoise='play -n synth pinknoise'
