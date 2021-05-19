@@ -54,10 +54,13 @@ if [ ! -d "$HOME/.local/bin" ]; then
 fi
 
 # Install n node version manager and global node modules.
+if [ ! -d "$HOME/.npm-global" ]; then
+    mkdir ~/.npm-global
+fi
 curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o ~/.local/bin/n
 chmod a+x ~/.local/bin/n
 sudo ~/.local/bin/n lts
-sudo npm install -g sass less uglify-js js-beautify stylelint npm-check-updates
+npm install -g sass less uglify-js js-beautify stylelint npm-check-updates
 
 # Install Stack and Haskell dependencies.
 curl -sSL https://get.haskellstack.org/ | sh
