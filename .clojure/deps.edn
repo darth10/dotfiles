@@ -6,10 +6,9 @@
 
  ;; External dependencies
 
- :deps
- {nrepl/nrepl {:mvn/version "0.8.3"}
-  cider/cider-nrepl {:mvn/version "0.25.9"}
-  refactor-nrepl/refactor-nrepl {:mvn/version "2.5.1"}}
+ ;; :deps {
+ ;;   org.clojure/clojure {:mvn/version "1.10.3"}
+ ;; }
 
  ;; Aliases
  ;;   resolve-deps aliases (-R) affect dependency resolution, options:
@@ -32,7 +31,11 @@
    :exec-args {:aot true}}
 
   :cider/nrepl
-  {:main-opts
+  {:extra-deps
+   {nrepl/nrepl {:mvn/version "0.8.3"}
+    cider/cider-nrepl {:mvn/version "0.25.9"}
+    refactor-nrepl/refactor-nrepl {:mvn/version "2.5.1"}}
+   :main-opts
    ["-m" "nrepl.cmdline" "--middleware"
     "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}}
 
