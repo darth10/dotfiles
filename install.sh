@@ -4,7 +4,7 @@ set -euo pipefail
 # Install (most) programs.
 sudo apt install \
      tp-smapi-dkms thinkfan xubuntu-restricted-addons libiw-dev tofrodos tree meson \
-     git editorconfig zsh shellcheck curl resolvconf htop feh docker.io ripgrep \
+     git editorconfig zsh shellcheck curl resolvconf htop feh docker.io ripgrep rlwrap \
      glibc-doc-reference clang-6.0 libclang-6.0-dev rtags leiningen keybase net-tools \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      xfce4-goodies xfce4-volumed xkbset gtk-chtheme lxappearance pasystray qt5ct qtchooser \
