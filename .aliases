@@ -31,4 +31,5 @@ alias semx="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 alias erc="emacs -q -e erc"
 alias doom='~/.emacs.d/bin/doom'
 
+alias ml='dsh -aM'
 alias pnoise='play -n synth pinknoise'
