@@ -4,8 +4,8 @@ set -euo pipefail
 # Install (most) programs.
 sudo apt install \
      tp-smapi-dkms thinkfan xubuntu-restricted-addons libiw-dev tofrodos tree meson \
-     git editorconfig zsh shellcheck curl resolvconf htop feh docker.io ripgrep rlwrap \
-     glibc-doc-reference clang-6.0 libclang-6.0-dev rtags leiningen net-tools \
+     git editorconfig zsh shellcheck curl resolvconf htop feh docker.io ripgrep \
+     glibc-doc-reference clang-6.0 libclang-6.0-dev rtags rlwrap net-tools \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      xfce4-goodies xfce4-volumed xkbset gtk-chtheme lxappearance pasystray qt5ct qtchooser \
      guile-2.2 guile-2.2-libs guile-2.2-doc sbcl cl-quicklisp stumpwm \
@@ -89,6 +89,13 @@ sbcl --non-interactive --eval '(ql:quickload "clx-truetype")' --eval '(xft:cache
 sbcl --non-interactive --eval '(ql:quickload "xembed")'
 sbcl --non-interactive --eval '(ql:quickload "swank")'
 sbcl --non-interactive --eval '(ql:quickload "slynk")'
+
+# Install Clojure.
+CLJ_VERSION=1.10.3.839
+curl -O https://download.clojure.org/install/linux-install-$CLJ_VERSION.sh
+chmod +x linux-install-$CLJ_VERSION.sh
+sudo ./linux-install-$CLJ_VERSION.sh
+rm ./linux-install-$CLJ_VERSION.sh
 
 # Install dependencies for building Emacs from source.
 sudo apt install autoconf automake build-essential libdbus-1-dev libgif-dev \
