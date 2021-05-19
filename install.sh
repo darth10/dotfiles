@@ -141,6 +141,12 @@ if [ ! -d "$HOME/.stumpwm.d" ]; then
     cd ~
 fi
 
+# Install Insomnia.
+echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
+    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+sudo apt update && sudo apt install insomnia
+npm install -g insomnia-inso
+
 # Install icons and themes.
 cd ~
 sudo add-apt-repository -u ppa:snwh/ppa
