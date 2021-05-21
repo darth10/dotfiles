@@ -57,7 +57,7 @@ export ANDROID_HOME=/home/darth10/android-sdk-linux/
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(dotnet docker fd git git-flow jump kubectl lein node python pip )
+plugins=(fd git git-flow jump lein node python pip dotnet docker docker-compose kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
