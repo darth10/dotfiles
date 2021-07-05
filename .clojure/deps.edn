@@ -40,10 +40,11 @@
    ["-m" "nrepl.cmdline" "--middleware"
     "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
 
- ;; Provider attributes
+  ;; Provider attributes
 
- ;; :mvn/repos {
- ;;   "central" {:url "https://repo1.maven.org/maven2/"}
- ;;   "clojars" {:url "https://repo.clojars.org/"}
- ;; }
+  ;; :mvn/repos {
+  ;;   "central" {:url "https://repo1.maven.org/maven2/"}
+  ;;   "clojars" {:url "https://repo.clojars.org/"}
+  ;; }
+  }
  }
