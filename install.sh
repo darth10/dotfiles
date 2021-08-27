@@ -154,5 +154,5 @@ sudo apt install paper-icon-theme arc-theme
 
 # Install fingerprint reader authentication.
 sudo apt install libpam-fprintd fprintd fprint-doc
-# Use `fprintd-enroll` and `fprintd-verify` to record fingerprint.
-# Enable fingerprint for login using `sudo pam-auth-update`.
+# Use `fprintd-enroll <uname>` and `fprintd-verify <uname>` to record
+# fingerprint. Enable fingerprint for login using `sudo pam-auth-update`.
