@@ -1,0 +1,23 @@
+add_newline = false
+format = """$character"""
+right_format = """$all"""
+
+[character]
+success_symbol = "[ ->](bold green)"
+
+[time]
+disabled = false
+format = '[\[ $time \]]($style) '
+time_format = "%T"
+
+[git_status]
+style = "bold yellow"
+
+[git_state]
+style = "bold yellow"
+
+[git_branch]
+style = "bold blue"
+
+[package]
+disabled = true

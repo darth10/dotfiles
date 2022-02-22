@@ -89,5 +89,8 @@ function parse_git_repo {
 # Prompts
 export PROMPT='%{$fg_bold[blue]%}$(parse_git_repo)[ $(hostname):%~ ] -> %{$reset_color%}'
 export RPROMPT='%{$reset_color%}$(parse_git_branch)%{$fg_no_bold[green]%}%*%{$reset_color%}'
+if [ ! $TERM = "dumb" ] && command -v starship &> /dev/null ; then
+     eval "$(starship init zsh)"
+fi
 
 # cmatrix -a -b -u 7

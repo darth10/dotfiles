@@ -106,6 +106,9 @@ sudo apt install autoconf automake build-essential libdbus-1-dev libgif-dev \
     libmagickwand-dev libncurses5-dev libotf-dev libpng-dev librsvg2-dev libtiff-dev \
     libtool libxml2-dev libxpm-dev texinfo xorg-dev
 
+# Install starship.
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
 # Build and install Emacs from source.
 if [ ! -d "$HOME/projects/emacs" ]; then
     git clone git://git.sv.gnu.org/emacs.git ~/projects/emacs
