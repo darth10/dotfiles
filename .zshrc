@@ -4,28 +4,21 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="candy"
-EMACS='emacsclient -t -a=""'
-
 # Alias definitions.
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
+EMACS='emacsclient -t -a=""'
 export GIT_EDITOR=$EMACS
 export EDITOR=$EMACS
 export GEM_HOME=/var/lib/gems/1.8/bin/
 export ANDROID_HOME=/home/darth10/android-sdk-linux/
 
-
-# Key bindings for Kitty/OSX
+# Key bindings for Kitty/OSX.
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
-# To use M-b and M-f on OSX, save the following to ~/Library/KeyBindings/DefaultKeyBinding.dict
+# To use M-b and M-f on OSX, save the following to ~/Library/KeyBindings/DefaultKeyBinding.dict:
 : '
 {
     "~d" = "deleteWordForward:";
