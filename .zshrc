@@ -21,6 +21,20 @@ export EDITOR=$EMACS
 export GEM_HOME=/var/lib/gems/1.8/bin/
 export ANDROID_HOME=/home/darth10/android-sdk-linux/
 
+
+# Key bindings for Kitty/OSX
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+# To use M-b and M-f on OSX, save the following to ~/Library/KeyBindings/DefaultKeyBinding.dict
+: '
+{
+    "~d" = "deleteWordForward:";
+    "^w" = "deleteWordBackward:";
+    "~f" = "moveWordForward:";
+    "~b" = "moveWordBackward:";
+}
+'
+
 # Set location of packages
 # export STACK_ROOT=/data/.stack
 # export NUGET_PACKAGES=/data/.nuget.packages
