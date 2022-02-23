@@ -69,34 +69,15 @@ plugins=(asdf fd ripgrep gh git git-flow jump lein node python pip dotnet docker
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# Customize to your needs.
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/darth10/.local/bin:/home/darth10/.cabal/bin:/home/darth10/.npm-global/bin
 
-# Function to change emacs directory
+# Function to change emacs directory.
 function set-emacs-directory {
     ln -snf $1 ~/.emacs.d
 }
 
-# Functions for git branch/status
-function parse_git_dirty {
-  [[ $(git diff 2> /dev/null) != "" ]] && echo "%{$fg[red]%} !!"
-}
-function parse_git_untracked {
-  [[ $(git status -s  2> /dev/null | grep -e '??') != "" ]] && echo "%{$fg[yellow]%} ??"
-}
-function parse_git_dirty_cached {
-  [[ $(git diff --cached 2> /dev/null) != "" ]] && echo "%{$fg_bold[green]%}++ "
-}
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$(parse_git_dirty_cached)%{$fg_bold[blue]%}\1$(parse_git_untracked)$(parse_git_dirty) /"
-}
-function parse_git_repo {
-  [[ $(git status 2> /dev/null) != "" ]] && echo "%{$fg_bold[green]%}"
-}
-
-# Prompts
-export PROMPT='%{$fg_bold[blue]%}$(parse_git_repo)[ $(hostname):%~ ] -> %{$reset_color%}'
-export RPROMPT='%{$reset_color%}$(parse_git_branch)%{$fg_no_bold[green]%}%*%{$reset_color%}'
+# Prompt:
 if [ ! $TERM = "dumb" ] && command -v starship &> /dev/null ; then
      eval "$(starship init zsh)"
 fi
