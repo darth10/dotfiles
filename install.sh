@@ -43,6 +43,11 @@ rsync -av --progress . ~ \
 # git reset --hard
 # cd ~
 
+# Install git-delta.
+curl -L https://github.com/dandavison/delta/releases/download/0.12.0/git-delta_0.12.0_amd64.deb -o git-delta.deb
+sudo dpkg -i git-delta.deb
+rm git-delta.deb
+
 # Create $HOME/projects directory.
 if [ ! -d "$HOME/projects" ]; then
     mkdir ~/projects
