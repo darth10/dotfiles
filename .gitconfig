@@ -4,3 +4,17 @@
 	signingkey = CBA0458B682A8544
 [commit]
 	gpgsign = true
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+	navigate = true
+	features = theme
+[delta "theme"]
+	dark = true
+	syntax-theme = Nord
+[merge]
+    conflictstyle = diff3
+[diff]
+	colorMoved = default
