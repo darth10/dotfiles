@@ -4,6 +4,8 @@
 	signingkey = CBA0458B682A8544
 [commit]
 	gpgsign = true
+[github]
+	user = darth10
 [core]
     pager = delta
 [interactive]
