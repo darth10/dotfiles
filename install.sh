@@ -99,7 +99,7 @@ sbcl --non-interactive --eval '(ql:quickload "swank")'
 sbcl --non-interactive --eval '(ql:quickload "slynk")'
 
 # Install Clojure.
-CLJ_VERSION=1.10.3.839
+CLJ_VERSION=1.11.1.1208
 curl -O https://download.clojure.org/install/linux-install-$CLJ_VERSION.sh
 chmod +x linux-install-$CLJ_VERSION.sh
 sudo ./linux-install-$CLJ_VERSION.sh
