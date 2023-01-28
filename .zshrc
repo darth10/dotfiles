@@ -75,6 +75,7 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 else
    export PASSWORD_STORE_DIR=/home/darth10/Cloud/pass
 fi
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 # Customize to your needs.
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/darth10/.local/bin:/home/darth10/.cabal/bin:/home/darth10/.npm-global/bin
