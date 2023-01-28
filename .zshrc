@@ -69,6 +69,13 @@ plugins=(asdf fd ripgrep gh git git-flow jump lein node python pip dotnet docker
 
 source $ZSH/oh-my-zsh.sh
 
+# password store
+if [[ $OSTYPE == 'darwin'* ]]; then
+   export PASSWORD_STORE_DIR=/Users/darth10/Cloud/pass
+else
+   export PASSWORD_STORE_DIR=/home/darth10/Cloud/pass
+fi
+
 # Customize to your needs.
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/darth10/.local/bin:/home/darth10/.cabal/bin:/home/darth10/.npm-global/bin
 
