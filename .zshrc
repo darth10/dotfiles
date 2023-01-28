@@ -65,7 +65,7 @@ bindkey "^[[1;3D" backward-word
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 fpath=(${ASDF_DIR}/completions $fpath)
-plugins=(asdf fd ripgrep gh git git-flow jump lein node python pip dotnet docker docker-compose kubectl)
+plugins=(asdf fd ripgrep gh git git-flow jump lein node pass python pip dotnet docker docker-compose kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
