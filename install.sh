@@ -11,7 +11,7 @@ sudo apt install \
      glibc-doc-reference clang-6.0 libclang-6.0-dev rtags rlwrap net-tools \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      xfce4-goodies xfce4-volumed xkbset gtk-chtheme lxappearance pasystray qt5ct qtchooser \
-     guile-2.2 guile-2.2-libs guile-2.2-doc libzstd-dev stumpwm \
+     guile-2.2 guile-2.2-libs guile-2.2-doc libzstd-dev \
      cowsay cmatrix baobab exfat-fuse exfat-utils flameshot pv \
      libpng-dev zlib1g-dev libpoppler-glib-dev libpoppler-private-dev \
      dropbox markdown \
@@ -72,16 +72,6 @@ sudo chmod a+rx /etc/stack
 echo 'allow-different-user: true' | sudo tee /etc/stack/config.yaml
 sudo chmod a+rx /etc/stack/config.yaml
 
-# Install quicklisp and stumpwm dependencies.
-sbcl --non-interactive --load /usr/share/common-lisp/source/quicklisp/quicklisp.lisp --eval '(quicklisp-quickstart:install :path ".quicklisp/")'
-# start using ~/.quicklisp/setup.lisp
-sbcl --non-interactive --load ~/.quicklisp/setup.lisp --eval '(ql-util:without-prompting (ql:add-to-init-file))'
-git clone git@github.com:l04m33/clx-truetype.git ~/.quicklisp/local-projects/clx-truetype
-sbcl --non-interactive --eval '(ql:quickload "clx-truetype")' --eval '(xft:cache-fonts)'
-sbcl --non-interactive --eval '(ql:quickload "xembed")'
-sbcl --non-interactive --eval '(ql:quickload "swank")'
-sbcl --non-interactive --eval '(ql:quickload "slynk")'
-
 # Install dependencies for building Emacs from source.
 sudo apt install autoconf automake build-essential libdbus-1-dev libgif-dev \
     libgnutls28-dev libgtk-3-dev libjansson-dev libjpeg-dev libm17n-dev \
@@ -117,15 +107,6 @@ fi
 curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
 ln -s ~/.cask/bin/cask ~/.local/bin/cask
 
-# Install stumpwm config.
-if [ ! -d "$HOME/.stumpwm.d" ]; then
-    git clone git@github.com:darth10/stumpwm.d.git ~/projects/stumpwm.d
-    ln -s ~/projects/stumpwm.d ~/.stumpwm.d
-    cd ~/.stumpwm.d
-    make
-    cd ~
-fi
-
 # Install Insomnia.
 echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
@@ -142,5 +123,6 @@ sudo apt install libpam-fprintd fprintd fprint-doc
 # fingerprint. Enable fingerprint for login using `sudo pam-auth-update`.
 
 ./scripts/asdf-plugins.bash
+./scripts/stumpwm.bash
 ./scripts/node-modules.bash
 ./scripts/stack-deps.bash
