@@ -1,17 +1,20 @@
 #!/bin/bash
 set -xeuo pipefail
 
+sudo apt install git curl
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.1 --depth 1
+
 # Install (most) programs.
 sudo apt install \
      tp-smapi-dkms thinkfan xubuntu-restricted-addons libiw-dev tofrodos tree meson \
-     git editorconfig zsh shellcheck curl resolvconf htop feh docker.io ripgrep \
+     editorconfig zsh shellcheck resolvconf htop feh docker.io \
      glibc-doc-reference clang-6.0 libclang-6.0-dev rtags rlwrap net-tools \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      xfce4-goodies xfce4-volumed xkbset gtk-chtheme lxappearance pasystray qt5ct qtchooser \
-     guile-2.2 guile-2.2-libs guile-2.2-doc sbcl cl-quicklisp stumpwm \
-     cowsay cmatrix baobab exfat-fuse exfat-utils flameshot fd-find pv \
+     guile-2.2 guile-2.2-libs guile-2.2-doc libzstd-dev stumpwm \
+     cowsay cmatrix baobab exfat-fuse exfat-utils flameshot pv \
      libpng-dev zlib1g-dev libpoppler-glib-dev libpoppler-private-dev \
-     dropbox python3-pip python3-dev virtualenv markdown \
+     dropbox markdown \
      imagemagick kitty kitty-terminfo
      gnuchess stockfish
 
@@ -30,6 +33,7 @@ rsync -av --progress . ~ \
       --exclude .git \
       --exclude .gitmodules \
       --exclude install.sh \
+      --exclude scripts \
       --exclude README.md \
       --exclude thinkhdaps
 
@@ -61,35 +65,12 @@ if [ ! -d "$HOME/.local/bin" ]; then
     mkdir ~/.local/bin
 fi
 
-# Install n node version manager and global node modules.
-if [ ! -d "$HOME/.npm-global" ]; then
-    mkdir ~/.npm-global
-fi
-curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o ~/.local/bin/n
-chmod a+x ~/.local/bin/n
-sudo ~/.local/bin/n lts
-npm install -g sass less uglify-js js-beautify stylelint npm-check-updates
-
-# Install Stack and Haskell dependencies.
-curl -sSL https://get.haskellstack.org/ | sh
-stack install cabal-install
-stack exec --no-ghc-package-path -- cabal update
-stack exec --no-ghc-package-path -- cabal install Cabal       # Upgrade Cabal
-stack exec --no-ghc-package-path -- cabal install hasktags hlint hoogle
+# Global stack configuration.
+# This is here instead of in `scripts/stack-deps.bash` as it requires `sudo`.
 sudo mkdir /etc/stack/
-sudo chmod a+rw /etc/stack
+sudo chmod a+rx /etc/stack
 echo 'allow-different-user: true' | sudo tee /etc/stack/config.yaml
-sudo chmod a+rw /etc/stack/config.yaml
-
-# Install Mono compiler.
-sudo apt install ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
-sudo apt update
-sudo apt install mono-roslyn
-
-# Install Terraform switcher.
-curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | sudo bash
+sudo chmod a+rx /etc/stack/config.yaml
 
 # Install quicklisp and stumpwm dependencies.
 sbcl --non-interactive --load /usr/share/common-lisp/source/quicklisp/quicklisp.lisp --eval '(quicklisp-quickstart:install :path ".quicklisp/")'
@@ -100,13 +81,6 @@ sbcl --non-interactive --eval '(ql:quickload "clx-truetype")' --eval '(xft:cache
 sbcl --non-interactive --eval '(ql:quickload "xembed")'
 sbcl --non-interactive --eval '(ql:quickload "swank")'
 sbcl --non-interactive --eval '(ql:quickload "slynk")'
-
-# Install Clojure.
-CLJ_VERSION=1.11.1.1208
-curl -O https://download.clojure.org/install/linux-install-$CLJ_VERSION.sh
-chmod +x linux-install-$CLJ_VERSION.sh
-sudo ./linux-install-$CLJ_VERSION.sh
-rm ./linux-install-$CLJ_VERSION.sh
 
 # Install dependencies for building Emacs from source.
 sudo apt install autoconf automake build-essential libdbus-1-dev libgif-dev \
@@ -156,7 +130,6 @@ fi
 echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 sudo apt update && sudo apt install insomnia
-npm install -g insomnia-inso
 
 # Install icons and themes.
 cd ~
@@ -167,3 +140,7 @@ sudo apt install paper-icon-theme arc-theme
 sudo apt install libpam-fprintd fprintd fprint-doc
 # Use `fprintd-enroll <uname>` and `fprintd-verify <uname>` to record
 # fingerprint. Enable fingerprint for login using `sudo pam-auth-update`.
+
+./scripts/asdf-plugins.bash
+./scripts/node-modules.bash
+./scripts/stack-deps.bash
