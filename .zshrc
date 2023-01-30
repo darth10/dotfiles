@@ -73,7 +73,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ $OSTYPE == 'darwin'* ]]; then
    export PASSWORD_STORE_DIR=/Users/darth10/Cloud/pass
 else
-   export PASSWORD_STORE_DIR=/home/darth10/Cloud/pass
+   export PASSWORD_STORE_DIR=/home/darth10/pCloudDrive/pass
 fi
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
