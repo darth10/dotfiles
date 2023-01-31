@@ -61,10 +61,18 @@ bindkey "^[[1;3D" backward-word
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# Brew:
+if [[ $OSTYPE == 'darwin'* ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(asdf fd ripgrep gh git git-flow jump lein node pass python pip dotnet docker docker-compose kubectl)
+plugins=(asdf brew fd ripgrep gh git git-flow jump lein node pass python pip dotnet docker docker-compose kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,7 +85,7 @@ fi
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 # Customize to your needs.
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/darth10/.local/bin:/home/darth10/.cabal/bin:/home/darth10/.npm-global/bin
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/darth10/.local/bin:/home/darth10/.cabal/bin:/home/darth10/.npm-global/bin
 
 # Function to change emacs directory.
 function set-emacs-directory {

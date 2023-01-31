@@ -22,6 +22,9 @@ sudo usermod -a -G docker "$(whoami)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s /usr/bin/zsh
 
+# Install homebrew.
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # Copy all files to $HOME directory.
 rsync -av --progress . ~ \
       --exclude .git \
