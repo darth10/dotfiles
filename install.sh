@@ -14,7 +14,7 @@ sudo apt install \
      guile-2.2 guile-2.2-libs guile-2.2-doc libzstd-dev \
      cowsay cmatrix baobab exfat-fuse exfat-utils flameshot pv \
      libpng-dev zlib1g-dev libpoppler-glib-dev libpoppler-private-dev \
-     dropbox markdown \
+     dropbox \
      imagemagick kitty kitty-terminfo
      gnuchess stockfish
 
@@ -50,11 +50,6 @@ rsync -av --progress . ~ \
 # git reset --hard
 # cd ~
 
-# Install git-delta.
-curl -L https://github.com/dandavison/delta/releases/download/0.12.0/git-delta_0.12.0_amd64.deb -o git-delta.deb
-sudo dpkg -i git-delta.deb
-rm git-delta.deb
-
 # Create $HOME/projects directory.
 if [ ! -d "$HOME/projects" ]; then
     mkdir ~/projects
@@ -77,9 +72,6 @@ sudo apt install autoconf automake build-essential libdbus-1-dev libgif-dev \
     libgnutls28-dev libgtk-3-dev libjansson-dev libjpeg-dev libm17n-dev \
     libmagickwand-dev libncurses5-dev libotf-dev libpng-dev librsvg2-dev libtiff-dev \
     libtool libxml2-dev libxpm-dev texinfo xorg-dev
-
-# Install starship.
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 # Build and install Emacs from source.
 if [ ! -d "$HOME/projects/emacs" ]; then
@@ -122,6 +114,7 @@ sudo apt install libpam-fprintd fprintd fprint-doc
 # Use `fprintd-enroll <uname>` and `fprintd-verify <uname>` to record
 # fingerprint. Enable fingerprint for login using `sudo pam-auth-update`.
 
+./scripts/brew-formulae.sh
 ./scripts/asdf-plugins.bash
 ./scripts/stumpwm.bash
 ./scripts/node-modules.bash
