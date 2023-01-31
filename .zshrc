@@ -64,7 +64,6 @@ bindkey "^[[1;3D" backward-word
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-fpath=(${ASDF_DIR}/completions $fpath)
 plugins=(asdf fd ripgrep gh git git-flow jump lein node pass python pip dotnet docker docker-compose kubectl)
 
 source $ZSH/oh-my-zsh.sh
