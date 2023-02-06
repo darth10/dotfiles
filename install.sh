@@ -12,9 +12,8 @@ sudo apt install \
      x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
      xfce4-goodies xfce4-volumed xkbset gtk-chtheme lxappearance pasystray qt5ct qtchooser \
      guile-2.2 guile-2.2-libs guile-2.2-doc libzstd-dev \
-     cowsay cmatrix baobab exfat-fuse exfat-utils flameshot pv \
+     cowsay cmatrix baobab libfuse2 exfat-fuse exfat-utils flameshot pv \
      libpng-dev zlib1g-dev libpoppler-glib-dev libpoppler-private-dev \
-     dropbox \
      imagemagick kitty kitty-terminfo
      gnuchess stockfish
 
@@ -59,6 +58,10 @@ fi
 if [ ! -d "$HOME/.local/bin" ]; then
     mkdir ~/.local/bin
 fi
+
+# Install pCloud.
+curl -O https://p-def2.pcloud.com/cBZnrXB1wZijGdL3ZZZmK97o7Z2ZZ28XZkZvP5pVZ9zZNFZ8RZTFZqzZpRZJHZIHZvFZaHZgLZlRZt7ZQ5ZCy4sVZaVhmTWFT2U7Ct5C4SQcp2QIK46Ly/pcloud
+mv pcloud ~/.local/bin
 
 # Global stack configuration.
 # This is here instead of in `scripts/stack-deps.bash` as it requires `sudo`.
