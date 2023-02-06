@@ -5,20 +5,23 @@ sudo apt install git curl
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.1 --depth 1
 
 # Install (most) programs.
+sudo add-apt-repository -u ppa:snwh/ppa
 sudo apt install \
-     tp-smapi-dkms thinkfan xubuntu-restricted-addons libiw-dev tofrodos tree meson \
-     editorconfig zsh shellcheck resolvconf htop feh docker.io \
-     glibc-doc-reference clang-6.0 libclang-6.0-dev rtags rlwrap net-tools \
-     x11-xserver-utils xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
-     xfce4-goodies xfce4-volumed xkbset gtk-chtheme lxappearance pasystray qt5ct qtchooser \
-     guile-2.2 guile-2.2-libs guile-2.2-doc libzstd-dev \
-     cowsay cmatrix baobab libfuse2 exfat-fuse exfat-utils flameshot pv \
-     libpng-dev zlib1g-dev libpoppler-glib-dev libpoppler-private-dev \
-     imagemagick kitty kitty-terminfo
-     gnuchess stockfish
+    tp-smapi-dkms thinkfan xubuntu-restricted-addons xfce4-goodies xfce4-volumed \
+    zsh xkbset editorconfig tofrodos shellcheck rtags meson pv docker.io \
+    kitty kitty-terminfo rlwrap tree htop resolvconf net-tools \
+    fprintd fprint-doc paper-icon-theme arc-theme \
+    feh flameshot gtk-chtheme lxappearance pasystray qt5ct qtchooser \
+    xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
+    libiw-dev libfuse2 libzstd-dev libpng-dev zlib1g-dev libpam-fprintd \
+    cowsay cmatrix baobab exfat-fuse exfat-utils x11-xserver-utils \
+    gnuchess pychess stockfish
 
 # Set current user permissions for docker.
 sudo usermod -a -G docker "$(whoami)"
+
+# Use `fprintd-enroll <uname>` and `fprintd-verify <uname>` to record
+# fingerprint. Enable fingerprint for login using `sudo pam-auth-update`.
 
 # Install oh-my-zsh and set as default.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -106,16 +109,6 @@ ln -s ~/.cask/bin/cask ~/.local/bin/cask
 echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 sudo apt update && sudo apt install insomnia
-
-# Install icons and themes.
-cd ~
-sudo add-apt-repository -u ppa:snwh/ppa
-sudo apt install paper-icon-theme arc-theme
-
-# Install fingerprint reader authentication.
-sudo apt install libpam-fprintd fprintd fprint-doc
-# Use `fprintd-enroll <uname>` and `fprintd-verify <uname>` to record
-# fingerprint. Enable fingerprint for login using `sudo pam-auth-update`.
 
 ./scripts/brew-formulae.sh
 ./scripts/asdf-plugins.bash
