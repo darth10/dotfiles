@@ -72,7 +72,7 @@ sudo chmod a+rx /etc/stack/config.yaml
 
 # Install dependencies for building Emacs from source.
 sudo apt install autoconf automake build-essential libdbus-1-dev libgif-dev \
-    libgnutls28-dev libgtk-3-dev libjansson-dev libjpeg-dev libm17n-dev \
+    libgnutls28-dev libgtk-3-dev libjansson-dev libjpeg-dev libm17n-dev libgccjit-11-dev \
     libmagickwand-dev libncurses5-dev libotf-dev libpng-dev librsvg2-dev libtiff-dev \
     libtool libxml2-dev libxpm-dev texinfo xorg-dev
 
@@ -81,8 +81,9 @@ if [ ! -d "$HOME/projects/emacs" ]; then
     git clone git://git.sv.gnu.org/emacs.git ~/projects/emacs
     cd ~/projects/emacs
 
-    git checkout emacs-27.1
-    ./configure --with-mailutils --with-json --with-imagemagick
+    git checkout emacs-28.2
+    ./autogen.sh
+    ./configure --with-mailutils --with-json --with-imagemagick --with-native-compilation
     make
     sudo make install
     cd ~
