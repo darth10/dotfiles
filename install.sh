@@ -27,6 +27,11 @@ chsh -s /usr/bin/zsh
 # Install homebrew.
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# Install Google Chrome.
+curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+rm google-chrome-stable_current_amd64.deb
+
 # Copy all files to $HOME directory.
 rsync -av --progress . ~ \
       --exclude .git \
