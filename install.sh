@@ -10,7 +10,7 @@ sudo apt install \
     tp-smapi-dkms thinkfan xubuntu-restricted-addons xfce4-goodies xfce4-volumed \
     zsh xkbset editorconfig tofrodos shellcheck rtags meson pv \
     kitty kitty-terminfo rlwrap tree htop resolvconf net-tools \
-    fprintd fprint-doc paper-icon-theme arc-theme \
+    fprintd fprint-doc paper-icon-theme arc-theme redshift redshift-gtk \
     feh flameshot gtk-chtheme lxappearance pasystray qt5ct qtchooser \
     xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
     libiw-dev libfuse2 libzstd-dev libpng-dev zlib1g-dev libpam-fprintd \
