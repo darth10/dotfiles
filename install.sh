@@ -8,7 +8,7 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.1 --depth 1
 sudo add-apt-repository -u ppa:snwh/ppa
 sudo apt install \
     tp-smapi-dkms thinkfan xubuntu-restricted-addons xfce4-goodies xfce4-volumed \
-    zsh xkbset editorconfig tofrodos shellcheck rtags meson pv docker.io \
+    zsh xkbset editorconfig tofrodos shellcheck rtags meson pv \
     kitty kitty-terminfo rlwrap tree htop resolvconf net-tools \
     fprintd fprint-doc paper-icon-theme arc-theme \
     feh flameshot gtk-chtheme lxappearance pasystray qt5ct qtchooser \
@@ -16,9 +16,6 @@ sudo apt install \
     libiw-dev libfuse2 libzstd-dev libpng-dev zlib1g-dev libpam-fprintd \
     cowsay cmatrix baobab exfat-fuse exfat-utils x11-xserver-utils \
     gnuchess pychess stockfish
-
-# Set current user permissions for docker.
-sudo usermod -a -G docker "$(whoami)"
 
 # Use `fprintd-enroll <uname>` and `fprintd-verify <uname>` to record
 # fingerprint. Enable fingerprint for login using `sudo pam-auth-update`.
