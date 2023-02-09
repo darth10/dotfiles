@@ -36,10 +36,12 @@ rm google-chrome-stable_current_amd64.deb
 rsync -av --progress . ~ \
       --exclude .git \
       --exclude .gitmodules \
+      --exclude README.md \
       --exclude install.sh \
       --exclude scripts \
-      --exclude README.md \
-      --exclude thinkhdaps
+      --exclude stumpwm.desktop \
+      --exclude thinkhdaps \
+      --exclude wififix
 
 # Install HDAPS daemon and indicator (if needed).
 #
