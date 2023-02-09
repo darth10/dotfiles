@@ -5,17 +5,16 @@ sudo apt install git curl
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.1 --depth 1
 
 # Install (most) programs.
-sudo add-apt-repository -u ppa:snwh/ppa
 sudo apt install \
     tp-smapi-dkms thinkfan xubuntu-restricted-addons xfce4-goodies xfce4-volumed \
     zsh xkbset editorconfig tofrodos shellcheck rtags meson pv \
-    kitty kitty-terminfo rlwrap tree htop resolvconf net-tools \
-    fprintd fprint-doc paper-icon-theme arc-theme redshift redshift-gtk \
+    kitty kitty-terminfo rlwrap tree htop resolvconf net-tools blueman \
+    fprintd fprintd-doc paper-icon-theme arc-theme redshift redshift-gtk \
     feh flameshot gtk-chtheme lxappearance pasystray qt5ct qtchooser \
-    xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
-    libiw-dev libfuse2 libzstd-dev libpng-dev zlib1g-dev libpam-fprintd \
-    cowsay cmatrix baobab exfat-fuse exfat-utils x11-xserver-utils \
-    gnuchess pychess stockfish
+    xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
+    libiw-dev libfuse2 libzstd-dev libpng-dev zlib1g-dev libpam-fprintd libssl-dev \
+    cowsay cmatrix baobab exfat-fuse x11-xserver-utils \
+    vlc gnuchess pychess stockfish
 
 # Use `fprintd-enroll <uname>` and `fprintd-verify <uname>` to record
 # fingerprint. Enable fingerprint for login using `sudo pam-auth-update`.
