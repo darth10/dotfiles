@@ -104,10 +104,6 @@ if [ ! -d "$HOME/.emacs.d" ]; then
     ~/.emacs.d/bin/doom install
 fi
 
-# Install Cask.
-curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
-ln -s ~/.cask/bin/cask ~/.local/bin/cask
-
 # Install Insomnia.
 echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
@@ -118,3 +114,8 @@ sudo apt update && sudo apt install insomnia
 ./scripts/stumpwm.bash
 ./scripts/node-modules.bash
 ./scripts/stack-deps.bash
+
+# Install Cask.
+# This needs to be done after python is installed through asdf.
+curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+ln -s ~/.cask/bin/cask ~/.local/bin/cask
