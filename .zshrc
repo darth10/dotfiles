@@ -1,9 +1,6 @@
 [[ $TERM = "tramp" ]] && unsetopt zle && PS1='$ ' && return
 [[ $TERM = "dumb" ]] && unset zle_bracketed_paste && unsetopt zle && PS1='$ '
 
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
 # Alias definitions.
 if [ -f ~/.aliases ]; then
     . ~/.aliases
@@ -69,13 +66,6 @@ else
 fi
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(asdf brew fd ripgrep gh git git-flow jump lein node pass python pip dotnet docker docker-compose kubectl)
-
-source $ZSH/oh-my-zsh.sh
-
 # password store
 if [[ $OSTYPE == 'darwin'* ]]; then
    export PASSWORD_STORE_DIR=/Users/darth10/Cloud/pass
@@ -96,5 +86,9 @@ function set-emacs-directory {
 if [ ! $TERM = "dumb" ] && command -v starship &> /dev/null ; then
      eval "$(starship init zsh)"
 fi
+
+# oh-my-zsh configuration:
+plugins=(asdf brew fd ripgrep gh git git-flow jump lein node pass python pip dotnet docker docker-compose kubectl)
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # cmatrix -a -b -u 7
