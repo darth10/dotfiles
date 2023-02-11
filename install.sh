@@ -65,9 +65,16 @@ if [ ! -d "$HOME/.local/bin" ]; then
     mkdir ~/.local/bin
 fi
 
-# Install pCloud.
-curl -O https://p-def2.pcloud.com/cBZnrXB1wZijGdL3ZZZmK97o7Z2ZZ28XZkZvP5pVZ9zZNFZ8RZTFZqzZpRZJHZIHZvFZaHZgLZlRZt7ZQ5ZCy4sVZaVhmTWFT2U7Ct5C4SQcp2QIK46Ly/pcloud
-mv pcloud ~/.local/bin
+# Link pCloud directory, and copy wallpapers and fonts.
+ls -s ~/pCloudDrive ~/Cloud
+if [ ! -d "$HOME/.local/lib" ]; then
+    mkdir ~/.local/lib
+fi
+cp ~/Cloud/imgs/wallpapers/starf0rge.png ~/.local/lib
+cp -R ~/Cloud/fonts .
+sudo cp ./fonts/Consolas.ttf /usr/share/fonts/truetype
+sudo cp ./fonts/PowerlineSymbols.otf /usr/share/fonts/opentype
+rm -Rf ./fonts
 
 # Global stack configuration.
 # This is here instead of in `scripts/stack-deps.bash` as it requires `sudo`.
