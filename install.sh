@@ -117,6 +117,13 @@ echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ 
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 sudo apt update && sudo apt install insomnia
 
+# Install Docker CLI (not `docker.io`).
+# This is needed for zsh autocompletion of the `docker` command.
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+      $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt install docker-ce-cli
+
 ./scripts/brew-formulae.sh
 ./scripts/asdf-plugins.bash
 ./scripts/stumpwm.bash
