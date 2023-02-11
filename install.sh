@@ -47,13 +47,13 @@ rsync -av --progress . ~ \
 # sudo apt install hdapsd
 # git submodule init
 # git submodule update
-# cd thinkhdaps
+# pushd thinkhdaps
 # ./autogen.sh
 # ./configure
 # make
 # sudo make install
 # git reset --hard
-# cd ~
+# popd
 
 # Create $HOME/projects directory.
 if [ ! -d "$HOME/projects" ]; then
@@ -85,14 +85,14 @@ sudo apt install autoconf automake build-essential libdbus-1-dev libgif-dev \
 # Build and install Emacs from source.
 if [ ! -d "$HOME/projects/emacs" ]; then
     git clone git://git.sv.gnu.org/emacs.git ~/projects/emacs
-    cd ~/projects/emacs
+    pushd ~/projects/emacs
 
     git checkout emacs-28.2
     ./autogen.sh
     ./configure --with-mailutils --with-json --with-imagemagick --with-native-compilation
     make
     sudo make install
-    cd ~
+    popd
 fi
 
 # Install Doom Emacs and private Emacs config.

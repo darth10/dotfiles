@@ -21,12 +21,12 @@ sbcl --non-interactive --eval '(ql:quickload "slynk")'
 rm quicklisp.lisp quicklisp.lisp.asc release-key.txt
 
 git clone https://github.com/stumpwm/stumpwm.git --branch 22.11 --depth 1
-cd stumpwm
+pushd stumpwm
 ./autogen.sh
 ./configure
 make
 sudo make install
-cd ..
+popd
 sudo cp stumpwm.desktop /usr/share/xsessions/
 rm -Rf stumpwm
 
