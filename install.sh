@@ -7,8 +7,8 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.1 --depth 1
 # Install (most) programs.
 sudo apt install \
     tp-smapi-dkms thinkfan xubuntu-restricted-addons xfce4-goodies xfce4-volumed \
-    zsh xkbset editorconfig tofrodos shellcheck rtags meson pv \
-    kitty kitty-terminfo rlwrap tree htop resolvconf net-tools blueman \
+    zsh xkbset editorconfig tofrodos shellcheck rtags meson pass pv \
+    kitty kitty-terminfo dsh rlwrap tree htop resolvconf net-tools blueman \
     fprintd fprintd-doc paper-icon-theme arc-theme redshift redshift-gtk \
     feh flameshot gtk-chtheme lxappearance pasystray qt5ct qtchooser \
     xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
