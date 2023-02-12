@@ -13,7 +13,7 @@ sudo apt install \
     feh flameshot gtk-chtheme lxappearance pasystray qt5ct qtchooser \
     xscreensaver-gl xscreensaver-gl-extra xscreensaver-data-extra \
     libiw-dev libfuse2 libzstd-dev libpng-dev zlib1g-dev libpam-fprintd libssl-dev \
-    cowsay cmatrix baobab exfat-fuse x11-xserver-utils \
+    cowsay cmatrix baobab exfat-fuse x11-xserver-utils lightdm-gtk-greeter-settings \
     vlc gnuchess pychess stockfish
 
 # Use `fprintd-enroll <uname>` and `fprintd-verify <uname>` to record
