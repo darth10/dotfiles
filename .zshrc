@@ -75,7 +75,7 @@ fi
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 # Customize to your needs.
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/darth10/.local/bin:/home/darth10/.cabal/bin:/home/darth10/.npm-global/bin
+export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.cabal/bin:/home/darth10/.npm-global/bin
 
 # Function to change emacs directory.
 function set-emacs-directory {
