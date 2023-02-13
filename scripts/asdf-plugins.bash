@@ -6,6 +6,8 @@ asdf plugin add dotnet
 asdf plugin add fd
 asdf plugin add java
 asdf plugin add jq
+asdf plugin add kubectl
+asdf plugin add nerdctl
 asdf plugin add nodejs
 asdf plugin add python
 asdf plugin add ripgrep

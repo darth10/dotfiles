@@ -7,3 +7,5 @@ python 3.11.1
 ripgrep 13.0.0
 sbcl 2.3.1
 stack 2.9.3
+nerdctl 1.2.0
+kubectl 1.26.1
