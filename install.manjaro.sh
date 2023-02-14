@@ -58,7 +58,7 @@ sudo cp ./fonts/Consolas.ttf /usr/share/fonts/TTF/
 sudo cp ./fonts/PowerlineSymbols.otf /usr/share/fonts/TTF/
 rm -Rf ./fonts
 
-# Install dependencies for building Emacs from source.
+# Install dependencies to build Emacs from source.
 sudo pamac install autoconf automake jansson libgccjit meson
 
 # Build and install Emacs from source.

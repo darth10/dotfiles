@@ -79,7 +79,7 @@ sudo cp ./fonts/Consolas.ttf /usr/share/fonts/truetype
 sudo cp ./fonts/PowerlineSymbols.otf /usr/share/fonts/opentype
 rm -Rf ./fonts
 
-# Install dependencies for building Emacs from source.
+# Install dependencies to build Emacs from source.
 sudo apt install autoconf automake build-essential libdbus-1-dev libgif-dev \
     libgnutls28-dev libgtk-3-dev libjansson-dev libjpeg-dev libm17n-dev libgccjit-11-dev \
     libmagickwand-dev libncurses5-dev libotf-dev libpng-dev librsvg2-dev libtiff-dev \
