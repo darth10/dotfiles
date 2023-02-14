@@ -99,6 +99,7 @@ if [ ! -d "$HOME/projects/emacs" ]; then
     ./configure --with-mailutils --with-json --with-imagemagick --with-native-compilation
     make
     sudo make install
+    make clean
     popd
 fi
 
