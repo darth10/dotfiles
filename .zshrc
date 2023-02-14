@@ -59,14 +59,16 @@ bindkey "^[[1;3D" backward-word
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Brew:
-if [[ $OSTYPE == 'darwin'* ]]; then
+if [[ $OSTYPE == 'darwin'* ]] && [ -f /opt/homebrew/bin/brew ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
-else
+elif [[ $OSTYPE == 'linux-gnu' ]] && [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+if command -v brew &> /dev/null ; then
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
 
-# password store
+# Password store:
 if [[ $OSTYPE == 'darwin'* ]]; then
    export PASSWORD_STORE_DIR=/Users/darth10/Cloud/pass
 else
