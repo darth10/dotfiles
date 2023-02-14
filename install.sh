@@ -66,7 +66,7 @@ if [ ! -d "$HOME/.local/bin" ]; then
 fi
 
 # Link pCloud directory, and copy wallpapers and fonts.
-ls -s ~/pCloudDrive ~/Cloud
+ln -s ~/pCloudDrive ~/Cloud
 if [ ! -d "$HOME/.local/lib" ]; then
     mkdir ~/.local/lib
 fi
