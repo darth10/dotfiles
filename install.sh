@@ -36,9 +36,9 @@ rsync -av --progress . ~ \
       --exclude .git \
       --exclude .gitmodules \
       --exclude README.md \
+      --exclude desktop \
       --exclude install.sh \
       --exclude scripts \
-      --exclude stumpwm.desktop \
       --exclude thinkhdaps \
       --exclude wififix
 

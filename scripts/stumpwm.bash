@@ -27,7 +27,7 @@ pushd stumpwm
 make
 sudo make install
 popd
-sudo cp stumpwm.desktop /usr/share/xsessions/
+sudo cp ./desktop/stumpwm.desktop /usr/share/xsessions/
 rm -Rf stumpwm
 
 # Install stumpwm config.
