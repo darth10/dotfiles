@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=XMatrix
+Comment=The "digital rain" effect, as seen on the computer monitors in "The Matrix". See also "GLMatrix" for a 3D rendering of the similar effect that appeared in the movie's title sequence. https://en.wikipedia.org/wiki/Matrix_digital_rain Written by Jamie Zawinski; 1999.
+TryExec=/usr/lib/xscreensaver/xmatrix
+Exec=/usr/lib/xscreensaver/xmatrix --root --small --density 60
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Screensaver;
+OnlyShowIn=MATE;GNOME;XFCE;
+Hidden=true

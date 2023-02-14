@@ -38,6 +38,7 @@ rsync -av --progress . ~ \
       --exclude README.md \
       --exclude desktop \
       --exclude install.sh \
+      --exclude install.manjaro.sh \
       --exclude scripts \
       --exclude thinkhdaps \
       --exclude wififix
