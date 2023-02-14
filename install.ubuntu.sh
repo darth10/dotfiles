@@ -1,6 +1,8 @@
 #!/bin/bash
 set -xeuo pipefail
 
+# WARNING: This script has been deprecated.
+
 sudo apt install git curl
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.1 --depth 1
 
