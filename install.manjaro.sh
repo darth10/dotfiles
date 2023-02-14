@@ -58,13 +58,6 @@ sudo cp ./fonts/Consolas.ttf /usr/share/fonts/TTF/
 sudo cp ./fonts/PowerlineSymbols.otf /usr/share/fonts/TTF/
 rm -Rf ./fonts
 
-# Global stack configuration.
-# This is here instead of in `scripts/stack-deps.bash` as it requires `sudo`.
-sudo mkdir /etc/stack/
-sudo chmod a+rx /etc/stack
-echo 'allow-different-user: true' | sudo tee /etc/stack/config.yaml
-sudo chmod a+rx /etc/stack/config.yaml
-
 # Install dependencies for building Emacs from source.
 sudo pamac install autoconf automake jansson libgccjit meson
 

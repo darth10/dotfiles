@@ -79,13 +79,6 @@ sudo cp ./fonts/Consolas.ttf /usr/share/fonts/truetype
 sudo cp ./fonts/PowerlineSymbols.otf /usr/share/fonts/opentype
 rm -Rf ./fonts
 
-# Global stack configuration.
-# This is here instead of in `scripts/stack-deps.bash` as it requires `sudo`.
-sudo mkdir /etc/stack/
-sudo chmod a+rx /etc/stack
-echo 'allow-different-user: true' | sudo tee /etc/stack/config.yaml
-sudo chmod a+rx /etc/stack/config.yaml
-
 # Install dependencies for building Emacs from source.
 sudo apt install autoconf automake build-essential libdbus-1-dev libgif-dev \
     libgnutls28-dev libgtk-3-dev libjansson-dev libjpeg-dev libm17n-dev libgccjit-11-dev \
