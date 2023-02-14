@@ -1,8 +1,12 @@
 #!/bin/bash
 set -xeuo pipefail
 
-SBCL_INSTALL_DIR=$(asdf where sbcl)
-echo "export SBCL_HOME=${SBCL_INSTALL_DIR}/lib/sbcl/" >> ~/.xsessionrc
+EXPORT_SBCL_HOME="export SBCL_HOME=$(asdf where sbcl)/lib/sbcl/"
+if [ -f $HOME/.xsessionrc ]; then   # This is Debian-specific.
+    echo EXPORT_SBCL_HOME >> ~/.xsessionrc
+else
+    echo EXPORT_SBCL_HOME >> ~/.xprofile
+fi
 
 curl -O https://beta.quicklisp.org/quicklisp.lisp
 curl -O https://beta.quicklisp.org/quicklisp.lisp.asc
@@ -10,7 +14,7 @@ curl -O https://beta.quicklisp.org/release-key.txt
 gpg --import release-key.txt
 gpg --verify quicklisp.lisp.asc quicklisp.lisp
 sbcl --non-interactive --load quicklisp.lisp --eval '(quicklisp-quickstart:install :path "~/.quicklisp/")'
-# start using ~/.quicklisp/setup.lisp
+# Start using ~/.quicklisp/setup.lisp.
 sbcl --non-interactive --load ~/.quicklisp/setup.lisp --eval '(ql-util:without-prompting (ql:add-to-init-file))'
 git clone git@github.com:l04m33/clx-truetype.git ~/.quicklisp/local-projects/clx-truetype
 sbcl --non-interactive --eval '(ql:quickload "clx-truetype")' --eval '(xft:cache-fonts)'
