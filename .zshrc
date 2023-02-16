@@ -76,7 +76,7 @@ export PASSWORD_STORE_DIR=$HOME/Cloud/pass
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 # Customize to your needs.
-export PATH=$PATH:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/.npm-global/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.cabal/bin
 
 # Function to change emacs directory.
 function set-emacs-directory {
