@@ -24,7 +24,6 @@ git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.11.1 --dep
 # Install oh-my-zsh and set as default.
 export RUNZSH=no
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-chsh -s /bin/zsh
 
 # Copy dotfiles.
 rsync -av --progress . $HOME \
