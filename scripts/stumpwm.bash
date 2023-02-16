@@ -35,7 +35,7 @@ sudo cp ./desktop/stumpwm.desktop /usr/share/xsessions/
 rm -Rf stumpwm
 
 # Install stumpwm config.
-if [ ! -d "$HOME/.stumpwm.d" ]; then
+if [ ! -d $HOME/.stumpwm.d ]; then
     git clone git@github.com:darth10/stumpwm.d.git ~/projects/stumpwm.d
     ln -s ~/projects/stumpwm.d ~/.stumpwm.d
     pushd ~/.stumpwm.d
