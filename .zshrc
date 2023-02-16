@@ -2,15 +2,15 @@
 [[ $TERM = "dumb" ]] && unset zle_bracketed_paste && unsetopt zle && PS1='$ '
 
 # Alias definitions.
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
+if [ -f $HOME/.aliases ]; then
+    . $HOME/.aliases
 fi
 
 EMACS='emacsclient -t -a=""'
 export GIT_EDITOR=$EMACS
 export EDITOR=$EMACS
 export GEM_HOME=/var/lib/gems/1.8/bin/
-export ANDROID_HOME=/home/darth10/android-sdk-linux/
+export ANDROID_HOME=$HOME/projects/android-sdk-linux/
 
 # Key bindings for Kitty/OSX.
 bindkey "^[[1;3C" forward-word
@@ -29,7 +29,7 @@ bindkey "^[[1;3D" backward-word
 # export STACK_ROOT=/data/.stack
 # export NUGET_PACKAGES=/data/.nuget.packages
 # export GOROOT=/usr/local/go
-# export GOPATH=~/.go
+# export GOPATH=$HOME/.go
 # export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # Set to this to use case-sensitive completion
@@ -69,19 +69,15 @@ if command -v brew &> /dev/null ; then
 fi
 
 # Password store:
-if [[ $OSTYPE == 'darwin'* ]]; then
-   export PASSWORD_STORE_DIR=/Users/darth10/Cloud/pass
-else
-   export PASSWORD_STORE_DIR=/home/darth10/pCloudDrive/pass
-fi
+export PASSWORD_STORE_DIR=$HOME/Cloud/pass
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 # Customize to your needs.
-export PATH=$PATH:/home/darth10/.local/bin:/home/darth10/.cabal/bin:/home/darth10/.npm-global/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/.npm-global/bin
 
 # Function to change emacs directory.
 function set-emacs-directory {
-    ln -snf $1 ~/.emacs.d
+    ln -snf $1 $HOME/.emacs.d
 }
 
 # Prompt:
