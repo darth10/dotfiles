@@ -90,8 +90,8 @@ fi
 
 # oh-my-zsh configuration:
 plugins=(
-  asdf brew docker docker-compose dotnet fd gh git git-flow jump kubectl lein
-  node pass pip python ripgrep sudo zsh-history-enquirer
+  asdf brew copypath docker docker-compose dotnet fd gh git git-flow jump
+  kubectl lein node pass pip python ripgrep sudo zsh-history-enquirer
 )
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
