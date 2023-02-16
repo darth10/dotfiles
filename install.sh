@@ -33,8 +33,7 @@ rsync -av --progress . $HOME \
       --exclude desktop \
       --exclude install.sh \
       --exclude scripts \
-      --exclude thinkhdaps \
-      --exclude wififix
+      --exclude thinkhdaps
 
 # Create $HOME/projects directory.
 if [ ! -d $HOME/projects ]; then
