@@ -6,4 +6,8 @@ set -xeuo pipefail
 if [ ! -d $HOME/.npm-global ]; then
     mkdir $HOME/.npm-global
 fi
-npm install -g sass less insomnia-inso uglify-js js-beautify stylelint npm-check-updates
+
+export _INIT_ZSH_HISTORY_ENQUIRER_INSTALL=true
+npm install -g \
+    sass less insomnia-inso uglify-js js-beautify stylelint \
+    npm-check-updates zsh-history-enquirer

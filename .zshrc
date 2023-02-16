@@ -12,6 +12,9 @@ export EDITOR=$EMACS
 export GEM_HOME=/var/lib/gems/1.8/bin/
 export ANDROID_HOME=$HOME/projects/android-sdk-linux/
 
+# Common key bindings.
+bindkey "^S" history_enquire
+
 # Key bindings for Kitty/OSX.
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
@@ -86,7 +89,10 @@ if [ ! $TERM = "dumb" ] && command -v starship &> /dev/null ; then
 fi
 
 # oh-my-zsh configuration:
-plugins=(asdf brew fd ripgrep gh git git-flow jump lein node pass python pip dotnet docker docker-compose kubectl)
+plugins=(
+  asdf brew docker docker-compose dotnet fd gh git git-flow jump kubectl lein
+  node pass pip python ripgrep zsh-history-enquirer
+)
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # cmatrix -a -b -u 7
