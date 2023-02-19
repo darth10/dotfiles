@@ -5,8 +5,8 @@ sudo pamac upgrade -a
 
 # Install (most) programs.
 sudo pamac install --no-confirm \
-    base-devel kitty xkbset xclip starship rlwrap git-delta net-tools dsh \
-    editorconfig-core-c-git tofrodos aspell pass pv imagemagick \
+    base-devel kitty xkbset xclip starship rlwrap git-delta net-tools dnsutils \
+    editorconfig-core-c-git tofrodos aspell pass pv dsh imagemagick \
     pasystray xfce4-volumed-pulse xfce4-screensaver xscreensaver-backends \
     feh flameshot arc-gtk-theme gtk-chtheme lxappearance redshift \
     transmission-gtk transmission-cli edk2-ovmf dnsmasq baobab-gtk3 \
