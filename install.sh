@@ -11,7 +11,7 @@ sudo pamac install --no-confirm \
     feh flameshot arc-gtk-theme gtk-chtheme lxappearance redshift \
     transmission-gtk transmission-cli edk2-ovmf dnsmasq baobab-gtk3 \
     clj-kondo-bin clojure-lsp-bin ghcup-hs-bin insomnia-bin \
-    cowsay cmatrix gnuchess pychess stockfish
+    multimarkdown cowsay cmatrix gnuchess pychess stockfish
 
 sudo pamac remove light-locker thunderbird
 sudo ln -s /usr/lib/xfce4/notifyd/xfce4-notifyd /usr/bin/xfce4-notifyd
