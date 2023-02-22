@@ -30,8 +30,7 @@ rsync -av --progress . $HOME \
       --exclude .gitmodules \
       --exclude README.md \
       --exclude desktop \
-      --exclude scripts \
-      --exclude thinkhdaps
+      --exclude scripts
 
 # Create $HOME/projects directory.
 if [ ! -d $HOME/projects ]; then
