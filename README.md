@@ -13,11 +13,11 @@
   mv pcloud ~/.local/bin
   ```
 
-- Clone the repository and run `scripts/install.sh`:
+- Clone the repository and run `scripts/install`:
   ```sh
   git clone git@github.com:darth10/dotfiles.git
   cd dotfiles
-  ./scripts/install.sh
+  ./scripts/install
   ```
 
 [pcloud-download]: https://www.pcloud.com/download-free-online-cloud-file-storage.html

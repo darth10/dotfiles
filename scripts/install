@@ -42,9 +42,9 @@ if [ ! -d $HOME/.local/bin ]; then
     mkdir $HOME/.local/bin
 fi
 
-./scripts/asdf-plugins.bash
-./scripts/emacs.bash
-./scripts/stumpwm.bash
-./scripts/node-modules.bash
-./scripts/pcloud.bash
-./scripts/stack-deps.bash
+./scripts/asdf-plugins
+./scripts/emacs
+./scripts/stumpwm
+./scripts/node-modules
+./scripts/pcloud
+./scripts/stack-deps
