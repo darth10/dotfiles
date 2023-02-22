@@ -47,4 +47,6 @@ fi
 ./scripts/stumpwm
 ./scripts/node-modules
 ./scripts/pcloud
+./scripts/lima
+./scripts/pia
 ./scripts/stack-deps
