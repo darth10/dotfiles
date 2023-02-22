@@ -30,7 +30,6 @@ rsync -av --progress . $HOME \
       --exclude .gitmodules \
       --exclude README.md \
       --exclude desktop \
-      --exclude install.sh \
       --exclude scripts \
       --exclude thinkhdaps
 
