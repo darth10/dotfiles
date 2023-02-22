@@ -10,6 +10,7 @@
   `~/.local/bin`:
   ```sh
   chmod u+x pcloud
+  mkdir ~/.local/bin
   mv pcloud ~/.local/bin
   ```
 
