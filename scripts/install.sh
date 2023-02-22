@@ -42,13 +42,6 @@ if [ ! -d $HOME/.local/bin ]; then
     mkdir $HOME/.local/bin
 fi
 
-# Install Lima.
-sudo pamac install --no-confirm \
-    lima-bin docker-cli-bin qemu-desktop virt-manager \
-    qemu-system-aarch64 qemu-system-arm
-sudo systemctl start libvirtd
-limactl completion zsh | sudo tee /usr/share/zsh/site-functions/_limactl
-
 # Install PIA VPN.
 PIA_INSTALLER=pia-linux-3.3.1-06924.run
 curl -O https://installers.privateinternetaccess.com/download/$PIA_INSTALLER
