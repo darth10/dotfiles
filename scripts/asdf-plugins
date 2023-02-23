@@ -1,6 +1,7 @@
 #!/bin/bash
 set -xeuo pipefail
 
+asdf plugin add babashka
 asdf plugin add clojure
 asdf plugin add dotnet
 asdf plugin add fd

@@ -1,11 +1,12 @@
+babashka 1.1.173
 clojure 1.11.1.1208
 fd 8.6.0
 java openjdk-17.0.2
 jq 1.6
+kubectl 1.26.1
+nerdctl 1.2.0
 nodejs 18.13.0
 python 3.11.1
 ripgrep 13.0.0
 sbcl 2.3.1
 stack 2.9.3
-nerdctl 1.2.0
-kubectl 1.26.1
