@@ -32,7 +32,6 @@ make
 sudo make install
 popd
 sudo cp ./desktop/stumpwm.desktop /usr/share/xsessions/
-rm -Rf stumpwm
 
 # Install stumpwm config.
 if [ ! -d $HOME/.stumpwm.d ]; then
