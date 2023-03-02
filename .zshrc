@@ -71,5 +71,3 @@ plugins=(
   kubectl lein macos node pass pip python ripgrep sudo zsh-history-enquirer
 )
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
-
-# cmatrix -a -b -s -u 5
