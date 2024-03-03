@@ -22,3 +22,6 @@ style = "bold blue"
 
 [package]
 disabled = true
+
+[hostname]
+ssh_symbol = '🛰️ '
