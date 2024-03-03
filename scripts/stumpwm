@@ -22,6 +22,9 @@ sbcl --non-interactive --eval '(ql:quickload "cl-ppcre")'
 sbcl --non-interactive --eval '(ql:quickload "xembed")'
 sbcl --non-interactive --eval '(ql:quickload "swank")'
 sbcl --non-interactive --eval '(ql:quickload "slynk")'
+# needed for :notify stumpwm module
+sbcl --non-interactive --eval '(ql:quickload "xml-emitter")'
+sbcl --non-interactive --eval '(ql:quickload "dbus")'
 rm quicklisp.lisp quicklisp.lisp.asc release-key.txt
 
 git clone https://github.com/stumpwm/stumpwm.git --branch 22.11 --depth 1

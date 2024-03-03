@@ -10,7 +10,8 @@ sudo pamac install --no-confirm \
     pasystray xfce4-volumed-pulse xfce4-screensaver xscreensaver-backends \
     feh flameshot arc-gtk-theme gtk-chtheme lxappearance redshift \
     transmission-gtk transmission-cli edk2-ovmf dnsmasq baobab-gtk3 \
-    clj-kondo-bin clojure-lsp-bin ghcup-hs-bin insomnia-bin \
+    # needed for dbus sbcl package
+    clj-kondo-bin clojure-lsp-bin ghcup-hs-bin insomnia-bin libfixposix \
     multimarkdown cowsay cmatrix gnuchess pychess stockfish
 
 sudo pamac remove light-locker thunderbird
