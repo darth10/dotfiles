@@ -68,6 +68,6 @@ fi
 # oh-my-zsh configuration:
 plugins=(
   asdf aws brew copypath docker docker-compose dotnet gh git git-flow jump
-  kubectl lein macos node pass pip python sudo zsh-history-enquirer
+  history-search-multi-word kubectl lein macos node pass pip python sudo
 )
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
