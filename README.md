@@ -5,7 +5,7 @@
   - Generate a new SSH key using `ssh-keygen`.
     Be sure to import the new SSH key into your GitHub account.
   - Import an existing SSH key using `ssh-add`.
-    You can use   `ssh-add -l` to view all valid SSH keys.
+    You can use `ssh-add -l` to view all valid SSH keys.
 - Download the pCloud binary from [here][pcloud-download], and copy it to
   `~/.local/bin`:
   ```sh
