@@ -10,3 +10,4 @@ python system
 ripgrep 14.1.0
 sbcl 2.4.6
 stack 2.9.3
+golang 1.23.0
