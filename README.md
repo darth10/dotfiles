@@ -21,4 +21,10 @@
   ./scripts/install
   ```
 
+- Note that the following command will prune your `.zsh_history`:
+  ```sh
+  cat -n .zsh_history | sort -t ';' -uk2 | sort -nk1 | cut -f2- > .zhistory
+  mv .zhistory .zsh_history
+  ```
+
 [pcloud-download]: https://www.pcloud.com/download-free-online-cloud-file-storage.html
