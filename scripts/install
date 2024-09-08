@@ -6,7 +6,7 @@ sudo pamac upgrade -a
 # Install (most) programs.
 sudo pamac install --no-confirm \
     base-devel kitty xkbset xclip starship rlwrap git-delta net-tools dnsutils \
-    editorconfig-core-c-git tofrodos aspell pass pv lsof dsh imagemagick \
+    editorconfig-core-c-git tofrodos aspell pass pv lsof dsh mise imagemagick \
     pasystray xfce4-volumed-pulse xfce4-screensaver xscreensaver-backends \
     feh flameshot arc-gtk-theme gtk-chtheme lxappearance redshift noto-fonts-emoji \
     transmission-gtk transmission-cli edk2-ovmf dnsmasq baobab-gtk3 \
@@ -18,9 +18,6 @@ sudo pamac remove light-locker thunderbird
 sudo ln -s /usr/lib/xfce4/notifyd/xfce4-notifyd /usr/bin/xfce4-notifyd
 sudo ln -s /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 /usr/bin/polkit-agent
 sudo cp ./desktop/xmatrix.desktop /usr/share/applications/screensavers/
-
-# Install asdf.
-git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.11.1 --depth 1
 
 # Install oh-my-zsh and set as default.
 RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -44,7 +41,9 @@ if [ ! -d $HOME/.local/bin ]; then
     mkdir $HOME/.local/bin
 fi
 
-./scripts/asdf-plugins
+# Install tools through mise.
+mise install
+
 ./scripts/emacs
 ./scripts/stumpwm
 ./scripts/node-modules
