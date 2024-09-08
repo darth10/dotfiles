@@ -30,16 +30,6 @@
    :exec-fn hf.depstar/uberjar
    :exec-args {:aot true}}
 
-  :cider/nrepl
-  {:extra-deps
-   {cider/cider-nrepl {:mvn/version "0.25.9"}
-    clj-commons/pomegranate {:mvn/version "1.2.1"}
-    nrepl/nrepl {:mvn/version "0.8.3"}
-    refactor-nrepl/refactor-nrepl {:mvn/version "2.5.1"}}
-   :main-opts
-   ["-m" "nrepl.cmdline" "--middleware"
-    "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
-
   ;; Provider attributes
 
   ;; :mvn/repos {
