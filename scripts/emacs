@@ -20,7 +20,8 @@ fi
 
 # Install Doom Emacs and private Emacs config.
 if [ ! -d $HOME/.doom.d ]; then
-    git clone git@github.com:darth10/doom.d.git $HOME/.doom.d
+    git clone git@github.com:darth10/doom.d.git $HOME/projects/doom.d
+    ln -s $HOME/projects/doom.d $HOME/.doom.d
 fi
 if [ ! -d $HOME/.emacs.d ]; then
     git clone git@github.com:hlissner/doom-emacs.git $HOME/projects/doom-emacs
