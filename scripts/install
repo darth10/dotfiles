@@ -44,9 +44,11 @@ fi
 # Install tools through mise.
 mise install
 
+# Install global npm packages.
+npm install -g sass js-beautify stylelint
+
 ./scripts/emacs
 ./scripts/stumpwm
-./scripts/node-modules
 ./scripts/pcloud
 ./scripts/lima
 ./scripts/pia

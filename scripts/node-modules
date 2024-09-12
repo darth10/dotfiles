@@ -1,6 +1,0 @@
-#!/bin/bash
-set -xeuo pipefail
-
-npm install -g \
-    sass less insomnia-inso uglify-js js-beautify stylelint \
-    npm-check-updates
